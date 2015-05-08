@@ -3,6 +3,7 @@
 Referencias del curso.
 
 HTML 5
+
 	NUEVAS ETIQUETAS
 		ELEMENTOS SEMANTICOS
 			header
@@ -52,6 +53,7 @@ HTML 5
 	<script src="code.js"> </script>
 
 css
+
 	PSEUDO ELEMENTOS
 		:first-line
 		:first-letter
@@ -77,11 +79,15 @@ css
 	    :checked
 	    :enabled
 	    :disabled
+
 ejercicio 3:
+
 	:enabled{
 		border:2px solid #000882D;
 	}
+
 ejercicio:
+
 	li{
 		float:left;
 		list-style:none;
@@ -100,6 +106,7 @@ ejercicio:
 	}
 
 Selectores
+
 	E:disabled /*
 	Elemento que esta desactivado*/
 	E:checked /*
@@ -119,6 +126,7 @@ Selectores
 	:visited,se aplica a todos los enlaces que han sido visitados al menos una vez por el usuario
 
 javascript 
+
 	https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Grammar_and_types
 	https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Control_de_flujo_y_manejo_de_errores
 	https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Funciones#Predefined_functions
@@ -152,9 +160,13 @@ javascript
 		http://api.jquery.com/
 
 Tipos de versionadores
+
 	http://invernalia.homelinux.net/jstitch/content/versionadores
+
 GIT y GitFlow
+
 	GIT
+	
 	http://es.wikipedia.org/wiki/Git
 	GITFlow
 	http://danielkummer.github.io/git-flow-cheatsheet/index.es_ES.html
