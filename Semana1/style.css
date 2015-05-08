@@ -1,0 +1,42 @@
+body{
+	background: green;
+}
+body > section:first-child{
+	background: red;
+}
+body > section:last-child{
+	background: white;
+}
+li {
+	float: left;
+	list-style: none;
+	width: 180px;
+	height: 180px;
+	text-align: center;
+	font-size: 50px;
+	font-weight: bold;
+	background: #585858;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	line-height: 180px;
+}
+ul > li {
+		border-radius:7%;
+	}
+ul > li:last-child{
+	background: blue !important;
+}
+
+ul > li:first-child{
+	background: white !important;
+};
+
+:enabled{
+		border:2px solid #000882D;
+	}
+input{
+	border: 2px solid blue;
+}	
+input:disabled{
+	border: 2px solid yellow;
+}	

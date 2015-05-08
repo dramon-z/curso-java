@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="Ejemplo de HTML5">
+	<meta name="keywords" content="HTML5, CSS3,Javascript">
+	<title>Ejemplo</title>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		
+		header {		  
+		      background-color: blue;
+		}
+	</style>
+</head>
+<body>
+<header><h1>HEADER</h1></header>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        NAV
+      </a>
+    </div>
+  </div>
+</nav>
+<div>
+	<ol class="breadcrumb">
+	  <li><a href="#">Home</a></li>
+	  <li><a href="#">Library</a></li>
+	  <li class="active">Data</li>
+	</ol>
+</div>
+<div class="row">
+	<section class="col-md-8">
+		<article>
+			<mark>mark</mark>	esto es un articulo
+			<command onclick="alert('Hello World')">Haz click aquí</command>
+		</article>
+		<form>
+			<table>
+				<thead>
+					<tr>
+						<th>Label</th>
+						<th>Inputs</th>
+					</tr>				
+				</thead>
+				<tbody>
+					<tr>
+						<td>search</td>
+						<td><input type="search" placeholder="Buscar" autofocus><input type="submit" value="Search"></td>
+					</tr>
+					<tr>
+						<td>number</td>
+						<td><input type="number"></td>
+					</tr>
+				</tbody>
+			</table>
+			
+			
+			<input type="range">
+			<input type="color">
+			<input type="tel">
+			<input type="url">
+			<input type="email">
+			<input type="date">
+			<input type="month">
+			<input type="week">
+			<input type="time">
+			<input type="datetime">
+			<input type="datetime-local">
+
+			
+		</form>
+		<progress>
+			<span id="objprogress">25</span>%
+		</progress>
+		<audio controls="controls">
+			<source src="cancion.ogg" type="audio/ogg" />
+			<source src="cancion.mp3" type="audio/mpeg" />
+		</audio>
+		<video width="320" height="240" controls>
+		<source src="pr6.mp4" type='video/mp4; codecs="avc1.42E01E,mp4a.40.2"'>
+		<source src="pr6.webm" type='video/webm; codecs="vp8, vorbis"'>
+		<source src="pr6.ogv" type='video/ogg; codecs="theora, vorbis"'>
+		</video>
+		<details>
+			<summary>Copyright por mi persona.</summary>
+			<p>Lorem ipsum dolor sit amet....</p>
+		</details>
+		<embed>
+		<canvas id="micanvas" width="200" height="100">
+		Este texto se muestra para los navegadores no compatibles con canvas.
+		<br>
+		Por favor, utiliza Firefox, Chrome, Safari u Opera.
+		</canvas>
+	</section>
+	<aside class="col-md-4">
+		<blockquote>Mensaje número uno</blockquote>
+		<blockquote>Mensaje número dos</blockquote>
+	</aside>
+</div>
+<footer>Derechos recerbados por mi</footer>
+</body>
+</html>

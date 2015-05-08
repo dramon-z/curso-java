@@ -1,0 +1,31 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<style type="text/css" media="screen">
+
+	</style>
+</head>
+<body>
+	<div id="id-div1">Mi div1</div>
+	<div id="id-div2">1,000</div>
+</body>
+<script>
+	$.fn.mifuncion=function(){
+		this.attr({
+			'style': 'background:#000;color:#fff',
+		});
+	}
+	$.fn.signo_peso=function(){
+		var texto = this.text();
+		this.text('$'+texto);
+	}
+	$(document).ready(function($) {
+		var div = $('div#id-div1'),
+			div2 = $('div#id-div2');
+		div.mifuncion();
+		div2.signo_peso();
+	});
+</script>
+</html>
