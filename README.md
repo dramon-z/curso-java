@@ -166,7 +166,9 @@ Tipos de versionadores
 GIT y GitFlow
 
 	GIT
-	
+
 	http://es.wikipedia.org/wiki/Git
+	https://try.github.io/levels/1/challenges/1
+	
 	GITFlow
 	http://danielkummer.github.io/git-flow-cheatsheet/index.es_ES.html
