@@ -1,6 +1,7 @@
 /* CSS CONTENIDO EJEMPLO */
 
 /* ESTILO ENCABEZADO*/
+
 hgroup1
 {
 	width:100%;
@@ -40,4 +41,6 @@ hgroup3
         border-color: grey;
         border-radius:40px;
         margin-top:10px;
+		font-family:'Lucida sans', Arial, Helvetica;
+		
 }
