@@ -1,0 +1,101 @@
+/*CSS CONTENIDO EJEMPLO*/
+
+/*ESTILO ENCABEZADO*/
+header
+{
+	width: 100%;
+	height: 100px;
+	display: block;
+	padding: 8px;
+	background: #B82E00;
+}
+
+nav
+{
+	display: block;
+	position: relative;
+	background: #B88A00;
+	padding-top: 16px;
+	width: 100%;
+	heigth: 40px;
+	line-height: 24px;
+}
+
+ul
+{
+	list-style: none;
+	list-style-type: none;
+	height: 40px;
+}
+
+ul li
+{
+
+	width: auto;
+	padding-right: 12px;
+	color: #FFF;
+	font-size: 22px;
+	font-weight: bold;
+	font-family: "arial";
+	position: relative;
+	float: left;
+	text-align: center;
+}
+
+ul li a
+{
+	color: #FFFFA3;
+}
+
+ul li a:hover
+{
+	color: #FF0000;
+}
+
+
+section
+{
+	width: 100%;
+	background: #8AB800;
+	padding: 8px;
+	border: 1px #FFF solid;
+	height: 480px;
+}
+
+#MENU
+{
+	width: 50%;
+	height: 400px;
+	display: block;
+	float: left;
+	position: relative;
+	background: #A3D1FF;
+	font-weight: bold;
+	font-size: 40px;
+	padding: 16px;
+	color: #FFFF29;
+}
+
+
+#contenido h1
+{
+	color: #FFFF29;
+	text-align: center;
+	font-size: 30px !important;
+}
+
+#contenido h4
+{
+	color: #FFF;
+	text-align: center;
+}
+
+footer
+{
+	display: block;
+	padding: 8px;
+	width: 100%;
+	background: #000;
+	height: 60px;
+	position: relative;
+}
