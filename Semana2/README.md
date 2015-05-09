@@ -8,6 +8,10 @@ Gitflow
 
 	http://danielkummer.github.io/git-flow-cheatsheet/
 
+Extra Smartgit
+
+	http://www.syntevo.com/smartgit/
+
 #JAVASCRIPT	
 
 DOM (ejemplo1)
