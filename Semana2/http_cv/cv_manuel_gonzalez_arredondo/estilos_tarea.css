@@ -1,0 +1,46 @@
+/*CCSS contenido de tarea*/
+
+/*estilo encabezado*/
+header {
+    background-color:black;
+    width:98%;
+    color:white;
+    text-align:center;
+    padding:10px; 
+    border-radius: 10px;
+}
+
+section {
+	background-color:#BDBDBD;
+    width:97%;
+    float:left;
+    padding:2%;
+    margin-top: 10px;
+    border-radius: 10px; 
+}
+h1 {
+    border:1px solid black;
+    padding:10px;
+    margin:10px;
+    text-align: center;
+}
+p {
+    padding:10px;
+    margin:30px;
+    text-align: justify;
+}
+li{
+   	float:left;
+    padding:2%;
+    margin-top: 10px;
+  }
+
+footer {
+    background-color:black;
+    width:98%;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:10px;
+    border-radius: 10px; 
+}
