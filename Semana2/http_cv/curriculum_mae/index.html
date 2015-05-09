@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8"/>
+<title> Curriculum - Acceso </title>
+<link rel="stylesheet" type="text/css" href="style_boton.css" />
+
+</head>
+
+<body>
+<header>
+</header>
+	<SCRIPT language=JavaScript>  
+	function Intro()
+	{ 
+
+	if (document.form1.password.value=="12345" && document.form1.login.value=="M@E"){ 
+			document.form1.submit(); 
+		} 
+		else{ 
+			 alert("Porfavor ingrese, nombre de usuario y contraseña correctos."); 
+		} 
+	} 
+	</SCRIPT> 
+	<form name=form1 action="Curriculum.html" class="form-1 clearfix"> 
+		<p>
+			<input type="text" id="login" name="login" placeholder="UserName">
+			<input type="password" name="password" id="password" placeholder="Password">
+		</p>
+		<button onclick="Intro()" type="button">
+			<span> Entrar </span>
+		</button>
+	</form>
+
+</body>
+
+</html>

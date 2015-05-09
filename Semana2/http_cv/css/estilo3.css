@@ -1,0 +1,122 @@
+body
+{
+	margin: 0;
+}
+header
+{ background: rgb(170, 170, 170);
+  width: 100%;
+  height: 140px;
+  border-radius: 10px;
+}
+nav
+{ margin-top:5px;
+  background: yellow;
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+}
+header  h1
+{ color: white;
+  text-align: center;
+}
+#main
+{ margin-top:5px;
+  background: rgb(170, 170, 100);
+  width: 70%;
+  height: auto;
+  float: left;
+  border-radius: 10px;
+}
+.columna
+{ margin: 30px 10px 10px;
+  float: left;
+  width: 30%;
+}
+.columnaII
+{ margin: 30px 10px 10px;
+  float: left;
+  width: 40%;
+  background: orange;	
+}
+.columnaIII
+{ margin: 30px 10px 10px;
+  width: 90%;
+  background: orange;	
+}
+article
+{ margin: 30px 10px 10px;
+  float: left;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  background: rgb(250, 270, 170);
+}
+aside
+{ width: 29%;
+  height:915px;
+  margin-left:10px;
+  margin-top:10px;
+  background:rgb(170, 170, 170);
+  float: left;
+  border-radius: 10px;
+}
+footer
+{   margin: 10px 0 10px;
+	width: 100%;
+	height: 140px;
+	background: rgb(170, 170, 170);
+	border-radius: 10px;
+	float: left;
+	text-align: center;
+}
+input
+{   padding: 10px;
+    margin:10px 30px;
+	
+}
+select
+{ padding: 12px;
+ margin:10px 30px;
+ width:  190px;
+}
+hgroup
+{  padding-right:15px;
+   margin:10px 30px;
+}
+ul
+{  list-style: none;
+   list-style-type: none;
+   height: 40px;
+}
+ul li
+{   width:auto;
+    padding-right:15px;
+	color:black;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: Arial;
+    position: relative;
+    float:left;
+}
+h1
+{
+	padding: 25px;
+}
+.labelForm
+{   margin:25px 20px 10px;
+	color: black;
+	font-size: 20px;
+    padding-right:30px;
+    float: left;
+}
+.labelForm2
+{  
+	margin:25px 20px 10px;
+	color: white;
+	font-size: 20px;
+    float: left;
+}
+legend
+{
+	font-family: "Arial Black";
+}
