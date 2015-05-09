@@ -19,3 +19,8 @@ Convertir string a números
 En el caso que un valor representando un número está en memoria como string, hay métodos para la conversión.
 parseInt() y parseFloat()**/
 
+
+//document.getElementById()
+//document.getElementsByName()
+//document.getElementsByClassName()
+//document.getElementById("objeto").innerHTML = "TEST";
