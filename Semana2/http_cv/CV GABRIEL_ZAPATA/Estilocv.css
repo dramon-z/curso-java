@@ -1,0 +1,26 @@
+﻿/*CSS CONTENIDO EJEMPLO*/
+
+
+/*ESTILO ENCABEZADO*/
+
+
+body
+{
+  font-family:Helvetica,Futura,Arial,Verdana,sans-serif;
+  font-style:normal;
+  font-weight:bold;
+  font-size: 22px;
+	text-align:right;
+	background: #9F9B9B;
+
+}
+
+#header
+{
+		color:#9F9B9B;
+		background:#FC0116;
+		border radius: 5px 10px 0px 0px;
+		padding-top: 20px;
+		padding-right: 10px;
+
+}
