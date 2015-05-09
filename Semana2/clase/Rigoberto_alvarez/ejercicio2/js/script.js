@@ -1,21 +1,3 @@
-var telefonos= {
-		casa:"123214",
-		oficina:"3213424"
-	};
-var variable = {
-	nombre:"Daniel",
-	ap_paterno:"Ramon",
-	ap_materno:"Zapata",
-	telefonos:telefonos
-};
-console.log(variable);
-console.log(variable.telefonos);
-console.log(variable.telefonos.casa);
-console.log(variable.nombre);
-document.getElementById('ejemplo1').innerHTML=variable.nombre+" "+variable.ap_paterno+" "+variable.ap_materno;
-
-
-
 function Objeto(){
 	this.cadena="micadena";
 	this.aleatorio=Math.random();
