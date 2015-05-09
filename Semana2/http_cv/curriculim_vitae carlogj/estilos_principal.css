@@ -1,0 +1,123 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background: #A5A5BB;
+	font: 16px verdana, sans-serif;
+
+}
+.Contenerdor{
+	/*background: #528FD5;*/
+	width: 80%;
+	max-width: 1000px;
+	margin: auto;
+	overflow: hidden;
+	box-sizing:border-box;
+
+}
+
+header{
+	background: #fff;
+	border-radius: 10px;
+}
+
+header, .principal, footer {
+	/*background: #fff;*/
+	width: 90%;
+	max-width: 1000px; /*significa que el tamaño maximo es de 1000 px*/
+	margin: 1% auto; /*Margen, arriba y abajo  para centrar*/
+	box-sizing:border-box;
+}
+/*Menu de navegacion Orizontal*/
+header nav{
+	background:#3D991F; /*azul #528FD5 Fondo de Menu  */ 
+	overflow: hidden; /* Esta propiedad oculta el contenido que se sale del contenedor y limpia los fload:lef*/
+	border-radius: 10px;
+}
+header nav ul{
+	list-style:none; /*Quitamos los puntos a los elementos de la lista*/
+}
+header nav ul li{
+	float: left; /*se apila la lista hacia la izquierda*/
+}
+
+header nav ul li a {
+	display: block; /*Esto permite que se aplique el padin arriba y abajo*/
+	padding: 10px 20px;
+	color:#000;
+	text-decoration: bold;
+	text-decoration: none;
+	border-radius: 20px;
+	padding-left: 10px;
+	-webkit-transition:padding-left 0.6s;
+}
+header nav ul li a:hover{
+	
+	background:#33CC33; /*Azul bajito#75ACEC*/
+	border-radius: 20px;
+	box-shadow: 5px 5px 5px #FFFF00;
+	padding-left: 30px;
+}
+
+.principal .articulos{
+	width: 70%;
+	float: right;
+
+	
+}
+.principal .articulos article{
+	padding: 1%;
+	background: #fff;
+	margin-bottom: 1%;
+	border-radius: 10px;
+}
+aside{
+	width: 28.5%;
+	background: #528FD5;
+	float:right; 
+	margin-right: 1.5%;
+	padding:1%;
+	box-sizing: border-box;
+	border-radius: 10px;
+}
+.menuizquierdo {
+	width: 90%;
+	margin-top: 4%;	
+}
+.menuizquierdo ul{
+	list-style:none; /*Quitamos los puntos a los elementos de la lista*/
+}
+.menuizquierdo ul li{
+	margin-top: 4%;
+	font-family: tahoma;
+	font-size: 18px;
+	background: #3D991F;
+	padding-top: 4%;
+	padding-bottom: 4%;
+	border-radius: 0px 20px 20px 0px;
+	padding-left: 20px;
+	box-shadow: 5px 0px 10px #FFFF00
+}
+.menuizquierdo ul li a{
+	text-decoration: none;
+	color:#000;
+}
+.menuizquierdo ul li:hover{
+	background: #33CC33;
+}
+.menuizquierdo ul li a:hover
+{
+	text-decoration: none;
+	color:#FFF;
+}
+
+footer{
+	background: #3D991F;
+	color:#fff;
+	clear: both; /*limpia los float*/
+	padding: 10px 0px;
+	text-align: center;
+	border-radius: 10px;
+}

@@ -51,16 +51,6 @@ Extras
 	https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia
 	https://developer.mozilla.org/es/docs/Web/JavaScript/Guide
 
-Practica:
-	
-	Crear un formulario de login
-		-username
-		-password
-	-se require validar el usuaro y contraseña 
-		-enviar mensaje de error al no cumplice la condicion
-	-si se cumple la condicion
-		mostrar la informacion de usuario guardada en un objecto
-
 #Jquery 
 	
 	https://jquery.com/download/
