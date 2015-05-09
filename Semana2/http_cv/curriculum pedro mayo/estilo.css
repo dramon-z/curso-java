@@ -1,0 +1,81 @@
+/*CSS CONTENIDO EJEMPLO*/
+/*ESTILO ENCABEZADO*/
+header
+{
+width: 100%;
+height: 80px;
+display: block;
+padding: 8px;
+background:YELLOW;
+text-align: center;
+}
+
+main
+{ margin-top:10px;
+  background: yellow;
+  width: 100%;
+  height: 450px;
+  float: left;
+  border-radius: 10px;
+}
+.article
+{ margin: 20px 10px 10px 10px;
+  float: left;
+  width: 48%;
+  height: 400px;
+  background: red;
+  border-radius: 20px;
+}
+
+nav
+{
+display: block;
+position: relative;
+background: #B88A00;
+padding: 8px;
+width: 100%;
+padding-top: 16px;
+height: 40px;
+}
+
+
+
+ul
+{
+list-style: none;
+list-style-type: none;
+height: 40px;
+}
+
+
+
+ul li
+{
+width: auto;
+padding-right: 6px;
+colo:#fff;
+font-size: 22px;
+font-weight: bold;
+font-family: "Arial";
+position: relative;
+float: left;
+text-align: left;
+}
+
+section
+{width: 100%;
+background: #8AB800;
+padding: 8px;
+border: 1px #fff solid;
+height: 480px;
+}
+
+footer
+{
+display: block;
+padding: 8px;
+width: 35%;
+background: red;
+height:30px;
+position: relative;
+}
