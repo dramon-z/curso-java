@@ -5,12 +5,24 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 </head>
 <body>
+	<div id="id-div">
+		<form  method="get" >
+			<ul class="lista-input" >
+					<li><input type="text" name="nombre"></li>
+					<li><input type="button" value="Aceptar" id="btn-1"></li>
+					<li><input type="button" value="Direccionar" id="btn-2"></li>
+
+			</ul>
+			<div id="muestra">
+				
+			</div>
+		</form>
+	</div>
 </body>
 <script src="js/script.js"></script>
 <script>
-/**
-$( document ).ready(function() {
-   var miCurso = new Curso();
-});**/
+	$(document).ready(function($) {
+			var miCurso = new Curso();
+	});
 </script>
 </html>
