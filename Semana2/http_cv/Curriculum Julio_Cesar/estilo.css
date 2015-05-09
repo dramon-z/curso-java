@@ -1,0 +1,139 @@
+﻿/*CSS CONTENIDO EJEMPLO*/
+
+/*ESTILO ENCABEZADO*/
+body {background-color:lightgray}
+
+header
+{
+	width:98%;
+	height:170px;
+	display:block;
+	padding:8px;
+	background:#B82E00;
+
+	moz-border-radius:10px;
+	webkit-border-radius:10px;
+	border-radius: 10px;
+}
+
+nav
+{
+	display:block;
+	position:relative;
+	background: #B88A00;
+	padding-top: 16px;
+	width:	98%;
+	height:40px;
+
+	moz-border-radius:10px;
+	webkit-border-radius:10px;
+	border-radius: 10px;	
+}
+
+ul
+{
+list-style:none;
+list-style-type:none;
+height:40px;
+}
+
+
+ul li
+{	
+	width:auto;
+	padding-right:12px;
+	color:#fff;
+	font-size:22px;
+	font-wight:bold;
+	font-family:"Arial";
+	position: relative;
+	float:left;
+	text-alingn:center;
+}
+
+ul li a
+{
+color:#FFFFA3;
+}
+
+ul li a:hover
+{
+color:#FF0000;
+}
+
+
+section
+{
+	
+	width: 100%;
+	background:#8AB800;
+	padding:8px;
+	border:1px #fff solid;
+	height:480px;
+}
+
+#contenido
+{
+	width:50%;
+	height:400px;
+	display:block;
+	float:left;
+	position:relative;
+	background: #a3d1ff;
+	font-weigth:bold;
+	font-size:40px;
+	padding:16px;
+	color:#000;
+}
+
+/*#manuales
+{
+	width:50%;
+	height:400px;
+	display:block;
+	float:left;
+	position:relative;
+	background: #a3d1ff;
+	font-weigth:bold;
+	font-size:40px;
+	padding:16px;
+	color:#white;
+}*/
+
+
+#contenido h1
+{
+color:#FFFF29;
+text-align:right;
+font-size:20px !important;
+}
+
+#contenido h4
+{
+color:#fff;
+text-align:center;
+}
+
+footer
+{
+	display: block;
+	padding: 8px;
+	width:100%;
+	background:#yellow;
+	height:60px;
+	position:relative;
+}
+
+input {
+width:100%;
+padding-bottom:10px;
+margin-bottom:5px;
+}
+
+input[type="email"]{
+width:50%;
+}
+
+input[type="number"]{
+width:10%;
+}
