@@ -45,5 +45,16 @@ var cars = ["Saab", "Volvo", "BMW"];
 document.getElementById("arreglo").innerHTML = cars;
 
 //mostrar el objeto con JSON.stringify() y JSON.parse()
-//json_miObjeto = JSON.stringify(miObjeto);
-//document.getElementById("objeto").innerHTML = json_miObjeto;
+json_miObjeto = JSON.stringify(variable);
+document.getElementById("objeto").innerHTML = json_miObjeto;
+
+var l = cars.length
+var i=0;
+
+for ( i = 0; i < l; i++) {
+	cars[i];
+};
+
+for (variable in cars){
+	console.log(cars[variable]);
+}
