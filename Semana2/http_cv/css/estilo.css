@@ -1,0 +1,75 @@
+
+/*CONTNEDORES PRINCIPALES*/
+
+header
+{
+	width: 100%;
+	height:100px;
+	display: block;
+	padding: 8px;
+	background: blue;
+}
+
+nav
+{  display: block;
+   position: relative;
+   background:#ffff00;
+   padding: 8px;
+   width: 100%;
+   height:40px;
+   line-height: 24px;
+}
+ul
+{  list-style: none;
+   list-style-type: none;
+   height: 40px;
+}
+ul li
+{   width:auto;
+    padding-right:10px;
+	color:black;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: Arial;
+    position: relative;
+    float:left;
+}
+ul li a
+{ color: #000000;
+}
+ul li a: hover
+{ color:white;
+	
+}
+section
+{ width: 100%;
+  background:#8AD800;
+  padding: 8px;
+  border: 1px #fff solid;	
+  height: 480px;
+}
+#contenido
+{ width:50%;
+  height: 400px;
+  display: block;
+  float: left;
+  position: relative;
+  background:orange;  
+}
+footer
+{ display: block;
+  padding: 8px;
+  width: 100%;
+  position: relative;
+	
+}
+#contenido h1
+{ color: #FFFF29;
+  text-align:right;
+  font-size: 20px !important;
+}
+#contenido h4
+{ color: #FFFF29;
+  text-align:center;
+}
+
