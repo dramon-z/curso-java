@@ -4,11 +4,15 @@ MiClase = function(){
 	var init,_config
 	,handleStorage
 	,handleEjemplos
+	,eventClick
 	;
 	init = function(config){
 		_config =config;
 		console.log(_config);
 		handleStorage();
+	};
+	eventClick = function(){
+		alert("Success");
 	};
 	handleStorage = function(){
 		if(typeof(Storage) !== "undefined") {
@@ -37,7 +41,8 @@ MiClase = function(){
 		console.log(obj);
 	};	
 	return {
-		inicializar:init
+		inicializar:init,
+		eventClick:eventClick
 	};
 };
 
