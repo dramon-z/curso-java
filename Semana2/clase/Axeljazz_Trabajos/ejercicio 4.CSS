@@ -1,0 +1,120 @@
+/*CSS CONTENIDO EJEMPLO*/
+
+/*ESTILO ENCABEZADO*/
+
+header
+{
+
+width:100%;
+height:80px;
+display: block;
+padding: 8px;
+background:#B82D00;
+
+}
+
+nav
+{
+display: block;
+position: relative;
+background: #B88A00
+padding: 8px;
+width: 100%;
+height:40px;
+padding-top:16px;
+
+
+}
+
+ul
+{
+list-style: none;
+list-style-type: none;
+height: 40px;
+}
+
+ul li 
+{
+width: auto;
+padding-right: 12px;
+color: #B8002E;
+font-size: 22px;
+font-weight: bold;
+font-family: "Arial";
+position: relative;
+float: left;
+text-aling: center;
+}
+
+ul li a
+{
+color:#FFFFA3;
+}
+
+ul li a: hover
+{
+color:#ff0000;
+}
+
+section
+{
+width:100%;
+background: #8AB800;
+padding: 8px;
+border; 1px #fff solid;
+height: 480px;
+}
+
+#contenido
+{
+width: 50%;
+height: 400px;
+display: block;
+float: left;
+position: relative;
+background: #A3D1FF;
+font-weight: bold;
+font-size: 40PX;
+padding: 16px;
+color: #000;
+}
+
+#contenido h1
+{
+color: #FFFF29;
+text-align: right;
+font-size: 20px !important;
+
+}
+
+#contenido h4
+{
+color:#fff;
+text-align: center;
+}
+
+footer
+{
+display: block;
+padding: 8px;
+width: 100%;
+background: #000000;
+heigh: 60px;
+position: relative;
+}
+
+input, select{
+            width: 85%;
+			padding-bottom: 10px;
+			margin-bottom: 5px
+			border: 1px solid blue;
+			}
+
+input[type="email"],input[type="url"]{ width: 50%;
+}
+input[type="number"]{ width:10%;
+}
+input[type="submit"]{ border: none !important;
+}
+form > ul> li > li
+      {color: #000 !important;}
