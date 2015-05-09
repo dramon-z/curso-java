@@ -5,11 +5,20 @@
 	
 </head>
 <body>
-	<h4>Arreglo</h4>
-	<p id="arreglo"></p>
-	<h4>Objecto</h4>
-	<p id="objeto"></p>
-
+	<h4>Ejemplo</h4>
+	<p id="ejemplo"></p>
+	<h4>Storage</h4>
+	<p id="storage"></p>
 </body>
 <script src="js/script.js"></script>
+<script>
+	var miClase = new MiClase();
+	console.log(miClase);
+	miClase.inicializar({
+		url_save:"save",
+		url_delete:"delete",
+		url_update:"update"
+	});
+
+</script>
 </html>
