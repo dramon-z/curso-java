@@ -1,0 +1,262 @@
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;         
+}
+
+a{
+  color: #6F3736;
+}      
+
+/* Limpiar */
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.clearfix{
+  *zoom: 1;
+}
+
+/* Estilos de las diviciones */
+body{
+    background:url(textura.png);
+    margin: 0;
+    font-family: 'Lucida sans', Arial, Helvetica;
+    font-size: small;
+}
+
+header{
+    padding: 10px 0;            
+    background-color: #4c2626;
+    background-image: linear-gradient(top, #6f3736, #4c2626);  
+    box-shadow: 0 1px 0 #fff, 0 -3px 3px #000 inset;
+}
+
+header hgroup{
+    margin: 0 auto;
+    width: 960px;            
+}
+        
+header h1{
+    margin: 0;
+    font: 25px/1 'Luckiest Guy', cursive;
+    float: left;
+    text-shadow: 0 1px 0 rgba(0,0,0,.9);            
+}
+
+header h2{
+    color: #D2A4A4;
+    margin: 0;
+    float: right;
+    font: italic normal 15px/25px Arial, Helvetica;
+}
+
+header a{
+    color: #eee;
+    text-decoration: none;
+}
+
+header a span{
+    color: #d2a4a4;
+}
+
+/* --------------------------------------------------- */
+
+footer{
+    text-align: right;
+    width: 960px;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+#tw, #fb{
+    float: right;
+    width: 130px;
+    margin: 10px 0 0 0;
+    overflow: hidden;
+}
+
+/* --------------------------------------------------- */        
+
+#main{
+    margin: 20px auto 0 auto;
+    width: 960px;
+}
+
+aside{
+    float: left;
+    width: 250px;
+    margin-right: 20px;
+}
+
+#content{
+    float: left;
+    width: 690px;
+}
+
+article{
+    position: relative;            
+    padding: 20px;
+    margin: 0 0 20px 0;
+    text-align: left;
+    background: #fff;
+    box-shadow: 0 1px 1px #999;
+    border-radius:5px;    
+	font-family:Arial;
+}
+
+p
+{
+white-space:pre-wrap;
+}
+
+article:before, article:after{
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  max-width:300px;
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+  transform: rotate(-3deg);
+}
+
+article:after{
+  transform: rotate(3deg);
+  right: 10px;
+  left: auto;
+}        
+
+/* Pie de pagina (fecha)*/
+article footer{
+    text-align: center;
+    width: auto;
+}
+
+article footer span{
+  padding: 0 10px 0 12px;
+  margin: 0 0 0 12px;
+  background: #bbb;
+  color: #fff;
+  font: bold 12px/24px arial, helvetica;
+  display: inline-block;
+  position: relative;
+  text-shadow: 0 1px 0 #999;
+  border-radius: 0px 4px 4px 0px;
+  box-shadow: 0 1px 0 #fff, 0 1px 0 #999 inset;
+}
+
+article footer span:before{
+  content: "";
+  position: inherit;
+  top: 0;
+  left: -30px;
+  width: 0;
+  height: 0;
+  border-color: transparent #bbb transparent transparent;
+  border-style: solid;
+  border-width: 5px 10px 5px 8px;
+ }
+ 
+ article footer span:after{
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 2px;
+  background: #fff;
+  box-shadow: -1px -1px 2px #777;
+}  
+
+
+/* Vertical menu */
+#menu li{
+  margin: 0 0 3px 0;             
+}
+
+#menu a{
+  display: block;
+  text-decoration: none;              
+  background: #ddd;
+  color: #444;  
+  padding: 10px 5px;
+  text-transform: uppercase;
+  font: bold 12px Arial,Helvetica;          
+  border-radius:5px;
+  box-shadow: 0 1px 0 #ccc;   
+}
+
+#menu a:hover{
+  color: #eee;
+  background: #9c9c9c;
+  background: linear-gradient(top, #bbb, #999);          
+}
+
+img
+{
+	width: 100%;
+}
+
+#logo
+{
+	width: 15%;	
+}
+
+#logo2
+{
+	width: 20%;	
+	float:right;
+	position:relative;
+	top:15px;
+}
+
+#submenu li
+{
+	position:relative;
+	left:15px;
+	font-family:Arial;
+	font-size:15px;
+	text-decoration:none;
+	
+}
+
+
+#submenu li:before
+{
+	font-family:Wingdings;
+	content:"\0040";
+	position:relative;
+	left:-5px;
+	font-size:20px;	
+}
+
+#menuR li
+{
+	position:relative;
+	left:0px;
+	font-family:Arial;
+	font-size:15px;
+	text-decoration:none;
+	padding: 5px 5px;
+}
+
+
+#menuR li:before
+{
+	font-family:Webdings;
+	content:"\0026";
+	position:relative;
+	left:-5px;
+	font-size:20px;	
+}
