@@ -1,0 +1,68 @@
+/*estilos curriculum vitae
+*/
+body
+{
+	width: 100%;
+	background-image: url("images1.jpg");
+	margin: 30px 10%;
+
+}
+
+header
+{
+	background: #8a9597;	
+	background: linear-gradient(to right, #000, #8a9597);
+	color: #fcc200;
+	width: 80%;
+	position:center;
+}
+
+section
+{
+	width: 80%;
+	background: linear-gradient(#000, #404040);
+	color: #0040ff;
+	text-shadow: 1px 1px 2px #fff;
+	text-align: center;
+	vertical-align: center;
+	position: center;
+
+	
+}
+
+article
+{
+	width: 70%;
+	background: #002147;
+	color: #fcc200;
+	text-shadow: none;
+	border-radius: 15px;
+	text-align: left;
+	font-family: courier;
+	padding-left: 20px;
+	margin: 0px 12%;
+/*	position: relative;
+	float: left;*/
+}
+
+footer
+{
+	background: #8a9597;
+	color: #FFFFFF;
+	width: 80%;
+	position:center;
+}
+
+h2
+{
+
+	font-family: arial;
+	font-weight: bold;
+
+}
+
+h3
+{
+	font-family: sans-serif;
+	padding-left: 40px;
+}
