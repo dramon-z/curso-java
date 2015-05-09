@@ -1,0 +1,29 @@
+/* CSS CONTENIDO EJEMPLO */
+
+/* ESTILO ENCABEZADO*/
+hgroup1
+{
+	width:100%;
+	height:60px;
+	display:block;
+	padding:8px;
+        border-width:thick;
+         border-style:inset;
+         border-color:gold;
+         border-radius:30px;
+        margin-top:10px;
+               	background:#32BE16;
+}
+
+hgroup2
+{
+	width:100%;
+	height:450px;
+	display:block;
+	padding:8px;
+        border-width:thick;
+        border-style:inset;
+        border-color:green;
+        border-radius:30px;
+        	background:#DEE0A2;
+}
