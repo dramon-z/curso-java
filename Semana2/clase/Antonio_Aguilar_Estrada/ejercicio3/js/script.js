@@ -12,7 +12,18 @@ MiClase = function(){
 		handleStorage();
 	};
 	eventClick = function(){
-		alert("Success");
+		var _username="admin",
+			_password = "root",
+			username,
+			password;
+
+		username = document.getElementsByName('username')[0].value;
+		password = document.getElementsByName('password')[0].value;
+		if(password !=_password){
+			alert("La contraseña es incorrecta");
+		}else{
+			alert("Bienvenido");
+		}
 	};
 	handleStorage = function(){
 		if(typeof(Storage) !== "undefined") {
