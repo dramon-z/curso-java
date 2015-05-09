@@ -1,1 +1,1 @@
-Crear Carpeta con su nombre y dentro crean sus archivos de ejercicio del curso
+Crear Carpeta con su nombre sin espacios con guines bajos y dentro crean sus archivos de ejercicio del curso
