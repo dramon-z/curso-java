@@ -1,0 +1,81 @@
+/*Archivo CSS para Ejemplo*/
+
+div
+{
+	-webkit-border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	border-radius: 10px 10px 10px 10px;
+	padding: 4px;
+}
+
+.header
+{
+	background: #F1A740;
+	text-align: center;
+	font-weight: bold;
+	color:#ffffff;
+	line-height: 18px;
+	vertical-align: middle;
+}
+
+.navegacion
+{
+	background: #F1EE40;
+	text-align: center;
+	font-weight: bold;
+	color:#000000;
+	line-height: 18px;
+	vertical-align: middle;
+}
+
+.contenedor_izquierda
+{
+	background: #11B84B;
+	height: 280px;
+}
+
+.contenedor_derecha
+{
+	background: #57A1EB;
+	height:280px;
+}
+
+.contenedor_derecha h3
+{
+	text-align: center;
+	font-weight: bold;
+	position: relative;
+  	top: 50%;
+  	transform: translateY(-50%);
+}
+
+.columnas
+{
+	background:#5CFA94;
+	text-align: center;
+	font-weight: bold;
+	position: relative;
+  	top: 50%;
+  	transform: translateY(-50%);
+	padding:10px;
+	display: inline-block;
+	border: 4px solid #11B84B;
+	height: 180px;
+}
+
+.columnas h3
+{
+	position: relative;
+  	top: 30%;
+  	transform: translateY(-30%);
+}
+
+.footer
+{
+	background: #F1A740;
+	text-align: center;
+	font-weight: bold;
+	color:#ffffff;
+	line-height: 18px;
+	vertical-align: middle;
+}
