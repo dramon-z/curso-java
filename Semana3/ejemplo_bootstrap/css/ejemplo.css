@@ -31,13 +31,13 @@ div
 .contenedor_izquierda
 {
 	background: #11B84B;
-	height: 280px;
+	height: 100%;
 }
 
 .contenedor_derecha
 {
 	background: #57A1EB;
-	height:280px;
+	height:100%;
 }
 
 .contenedor_derecha h3
@@ -47,6 +47,7 @@ div
 	position: relative;
   	top: 50%;
   	transform: translateY(-50%);
+
 }
 
 .columnas
@@ -55,12 +56,9 @@ div
 	text-align: center;
 	font-weight: bold;
 	position: relative;
-  	top: 50%;
-  	transform: translateY(-50%);
-	padding:10px;
 	display: inline-block;
 	border: 4px solid #11B84B;
-	height: 180px;
+	height: 100%;
 }
 
 .columnas h3
