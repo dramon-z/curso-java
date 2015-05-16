@@ -1,0 +1,268 @@
+/*MAQUETA SINOS*/
+
+#principal
+{
+	width: 990px;
+	height: 750px;
+	background: #D3DFE3;
+
+	margin: 0 auto;
+
+}
+
+#barra
+{
+	width: 990px;
+	height: 60px;
+	background: #CCD9DB;
+	background-image: url(images/titulo1.png);
+	background-repeat: no-repeat;
+	margin: 0 auto;
+	text-align: right;
+	padding-top: 18px;
+
+}
+
+#barra1
+{
+	padding: 0;
+
+}
+
+#signos
+{
+	width: 970px;
+	height: 660px;
+	background: #D3DFdd;
+	background-image: url(images/fondo_app_a_pc.png);
+	margin: 0 auto;
+
+	border-style: outset; border-width: 1px;
+}
+
+
+#titulo1
+{
+	width: 970px;
+	height: 45px;
+	background: #16216A;
+
+	margin: 0 auto;
+	color: #fff;
+
+}
+
+#titulo2
+{
+	width: 970px;
+	height: 27px;
+	background: #D3DFff;
+
+	margin: 0 auto;
+	color: #000;
+	font-family: arial;
+	font-size: 12px;
+	
+}
+
+#datos
+{
+	width: 950px;
+	height: 480px;
+	background: #B2C8E5;
+
+	margin: 32px auto;
+	padding-top: 30px;
+	border-style: outset; border-width: 1px;
+
+}
+
+label
+{
+	
+	position: relative;
+	font-family: arial;
+	font-size: 14px;
+	font-weight: bold;
+	/*padding-right: 20px;*/
+	padding-left: 8px;
+	letter-spacing: -1px;
+	
+
+}
+
+.datos1
+{
+	background: #C4D9F2; 
+	width: 903px;
+	height: 63px;
+
+	margin: 12px auto;
+
+
+}
+
+.datos10
+{
+	background: #B0CAEF; 
+	width: 260px;
+	height: 40px;
+	position: relative;
+	float:left;
+	margin: 12px 20px;
+	text-align: text-top;
+
+	/*border-spacing: 10px;*/
+}
+
+.datos2
+{
+	background: #C4D9F2; 
+	width: 903px;
+	height: 90px;
+
+	margin: 10px auto;
+
+}
+
+
+.datos3
+{
+	background: #C4D9F2; 
+	width: 903px;
+	height: 100px;
+
+	margin: 10px auto;
+
+}
+
+
+.etiqueta
+{
+	font-weight: bold;
+	font-family: verdana;
+	font-size: 11px;
+
+
+}
+
+.etiqueta2
+{
+	font-weight: normal;
+	font-family: verdana;
+	font-size: 11px;
+
+}
+
+.botones
+{
+
+	padding-top: 20px;
+	text-align: center;
+}
+
+ 
+input
+{
+	width: 91px;
+	height: 20px;
+	border-style: none;
+	margin 0 auto;
+
+
+}
+
+.datos21
+{
+
+	background: #B0CAEF; 
+	width: 320px;
+	height: 70px;
+	position: relative;
+	float:left;
+	margin: 12px 20px;
+	text-align: text-top;
+
+}
+
+.datos31
+{
+
+	background: #B0CAEF; 
+	width: 360px;
+	height: 30px;
+	margin: 12px 20px;
+	text-align: text-top;
+
+}
+
+.datos32
+{
+
+	background: #B0CAEF; 
+	width: 640px;
+	height: 40px;
+	margin: 12px 20px;
+	text-align: text-top;
+
+}
+
+
+/*
+input [type="checkbox"]
+{
+	width: 5px;
+	height: 5px;
+	border-style: none;
+
+
+}
+
+input [type="radio"]
+{
+	width: 5px;
+	height: 5px;
+	border-style: none;
+
+}
+*/
+/*ul
+{
+	position: relative;
+	float:left;
+
+}
+*/
+li 
+{
+	list-style: none;
+	position: relative;
+	float:left;
+}
+
+
+.texto1
+{
+	width: 45px;
+	height: 20px;
+	border-style: none;
+	margin 0 auto;
+
+
+}
+
+.check
+{
+	width: 15px;
+	height: 15px;
+	border-style: none;
+/*	margin 0 auto;
+*/
+
+
+}
+
+
+
+
+
