@@ -1,0 +1,34 @@
+body {
+
+}
+
+.header
+{ background: orange;
+  
+}
+.nav-bar
+{
+	background:blue;
+}
+.main
+{
+	background: green;
+	height: 400px;
+	
+}
+.article
+{ height: 300px;
+  background: yellow;
+}
+.article2
+{ height: 300px;
+  background: blue;
+}
+.aside
+{ background: red;
+  height: 400px;
+}
+.footer-base
+{   height:100px;
+	background: yellow;
+}

@@ -1,0 +1,5 @@
+Manuel Gonzalez Arredondo-> Pantalla 1
+Jesus Abel de los Santos Navarro -> Pantalla 2
+Esau Hernandez Narvaez -> Pantalla 3
+Ruben Alzate Quintero -> Pantalla 4 (Signos vitales y sintomas)
+Esequiel Vazquez Lorca -> Pantalla 5 (Nota médica)

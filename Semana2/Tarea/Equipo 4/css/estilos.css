@@ -1,0 +1,88 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font: 14px verdana, sans-serif;
+	background: #FCFCFF;
+	margin:2% auto; 			/*Centra el formulario*/
+}
+
+.ContenedorGral{
+	width: 40%;
+	height: auto;
+	background: #FFF;
+	border:2px solid #CCC;		/*Dibuja el borde del formulario*/
+	margin:4% auto;
+	padding: 10px;
+	border-radius: 10px;
+	
+}
+h2{
+	text-align: center;
+}
+form{
+	width: 90%;
+	height: auto;
+	border:2px solid #CCC;		/*Dibuja el borde del formulario*/
+	border-radius: 10px;
+	margin:4% auto; 			/*Centra el formulario*/
+	padding: 10px;
+	-webkid-box-zise:border-box;  /*Cambia el modelo de caja*/
+	-moz-box-sizeng:border-box;
+	box-sizing:border-box;
+	clear: both;				/*Limpia los float*/
+}
+img{
+	display: inline-block;
+	width: 20%;
+	height: auto;
+
+}
+header form img {
+	display: block;
+  	float: left;
+	width: 15%;
+	height: 85%;
+
+}
+h2{
+	text-align: center;
+	color: #000;
+	font-weight: normal;
+}
+form h2{
+	text-align: center;
+	color: #000;
+	font-weight: normal;
+
+}
+label{
+	font-size: 12px;
+	font:verdana;
+	/*display: block; 			/*Se ordenan en forma de caja*/
+	/*width: 100%;				 /*Abarca todo el documento*/
+}
+input{
+	margin-bottom: 20px;
+	width: 80%;
+	padding:10px;
+	padding-left: 10px;
+	-webkid-box-zise:border-box;  /*Cambia el modelo de caja*/
+	-moz-box-sizeng:border-box;
+	box-sizing:border-box;
+	border:1px solid #ccc;
+	border-radius: 10px;
+	box-shadow: 2px 2px 2px #0033CC;
+}
+input[type="submit"]{
+margin-left: 15%;
+clear: both;
+}
+input:focus{
+	border-radius: 10px;
+	padding-left: 20px;
+	background: #F5FAFF;
+	/*border: 1px solid;*/
+}
