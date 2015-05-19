@@ -23,8 +23,12 @@ public class OperacionesAritmeticas {
 		//División
 		double f = a / b;
 
+        double j = a / (double)b;
+
 		System.out.println("Division a / b: " + f);
 
+        System.out.println("Division a / b: " + j);
+		
 		double g = a / 20.0;
 
 		System.out.println("Division a / 20.0: " + g);
