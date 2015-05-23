@@ -1,13 +1,13 @@
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.FileNotFoundExcepcion;
+import java.io.FileNotFoundException;
 
 import javax.xml.parsers.*;
 import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;;
 import javax.xml.transform.stream.StreamResult;
 
-import org.w3w.dom.*;
+import org.w3c.dom.*;
 
 public class ArchivoXML{
 	
@@ -29,15 +29,15 @@ public class ArchivoXML{
 				Transformer transformer  = transformerfactory.newTransformer();
 
 				transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-				transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount");
+				transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
 
 				Source source = new DOMSource(document);
 				FileOutputStream outputstream = new FileOutputStream(RUTA_ARCHIVO);
 				Result result = new StreamResult(outputstream);
 				transformer.transform(source, result);
 				outputstream.close();
-			} catch(Exception e){
-				e.printStrackTrace();
+			}catch (Exception e) {
+				e.printStackTrace();
 				System.exit(0);
 			}
 		}

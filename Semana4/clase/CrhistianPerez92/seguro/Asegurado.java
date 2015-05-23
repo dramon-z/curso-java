@@ -1,5 +1,17 @@
 package seguro;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.xpath.*;
+
+import org.xml.sax.SAXException;
+
+import java.util.Scanner;
+import utils.ManageXML;
 
 public class Asegurado{
 	private String nombre = null;
@@ -12,7 +24,7 @@ public class Asegurado{
 		
 	}
 
-	public void AgregarAsegurado(){
+	public void AgregarAsegurado()throws TransformerConfigurationException, FileNotFoundException, ParserConfigurationException, TransformerException, IOException, SAXException{
 		System.out.println("Ingrese el nombre completo del Asegurado:");
 		nombre = new Scanner(System.in).nextLine();
 		System.out.println("Ingrese el numero de seguro social del Asegurado:");
@@ -26,7 +38,7 @@ public class Asegurado{
 		ImprimirConfirmacion("Registrar");
 	}
 	
-	public void ImprimirConfirmacion(String text){
+	public void ImprimirConfirmacion(String text)throws TransformerConfigurationException, FileNotFoundException, ParserConfigurationException, TransformerException, IOException, SAXException{
 		System.out.println("------------------------\n");
 		System.out.println("Datos de acuse del registro del Asegurado \n         Para "+text+ "\n");
 		System.out.println("Nombre: "+ nombre +"\nNum de Seguro: "+ num_seguro +"\nEdad: "+edad+"\nSexo:"+sexo+"\nDireccion:"+direccion);
@@ -35,17 +47,24 @@ public class Asegurado{
 		String esCorrecta = new Scanner(System.in).nextLine();
 
 		if("si".equals(esCorrecta)){
-			System.out.println("Ingresaste para  " + esCorrecta + ", presiona enter para continuar");
+			ManageXML archivo = new ManageXML();
+			archivo.GuardarAsegurado(nombre, num_seguro, edad, sexo, direccion);
 		}else{
 			System.out.println("Ingresaste " + esCorrecta + ", presiona enter para continuar");
 		}
 	}	
 
-	public void ConsultarAsegurado(){
-		System.out.println("Consultado....");
+	public void ConsultarAsegurado()throws ParserConfigurationException, TransformerConfigurationException, FileNotFoundException, TransformerException, IOException, SAXException, XPathExpressionException{
+		System.out.println("Ingrese el nombre completo del Asegurado a buscar:");
+		nombre = new Scanner(System.in).nextLine();
+		ManageXML archivo = new ManageXML();
+		archivo.BuscarAsegurado(nombre);
 	}
 
-	public void EliminarAsegurado(){
-		System.out.println("Eliminando.....");
+	public void EliminarAsegurado()throws ParserConfigurationException, TransformerConfigurationException, FileNotFoundException, TransformerException, IOException, SAXException, XPathExpressionException{
+		System.out.println("Ingrese el nombre completo del Asegurado a eliminar:");
+		nombre = new Scanner(System.in).nextLine();
+		ManageXML archivo = new ManageXML();
+		archivo.EliminarAsegurado(nombre);
 	}
 }
