@@ -45,7 +45,7 @@ public class AgregarAsegurado {
 		System.out.print("¿La información es correta (si/no)?: ");
 		String esCorrecta = new Scanner(System.in).next();
 
-		if ("si".equals(esCorrecta)) {
+		if (esCorrecta == "si") {
 			System.out.print("Ingresaste " + esCorrecta + ", presiona enter para continuar");
 		} else {
 			System.out.print("Ingresaste " + esCorrecta + ", presiona enter para continuar");
