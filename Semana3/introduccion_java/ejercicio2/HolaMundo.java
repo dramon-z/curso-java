@@ -6,7 +6,7 @@ public class HolaMundo {
 
 	public static void main(String[] args) {
 		//Variable que almacena un nombre
-		String nombre = "Jose Luis Landero Noriega";
+		String nombre = "Panchito";
 
 		System.out.println("¡Hola " + nombre + "!");
 	}

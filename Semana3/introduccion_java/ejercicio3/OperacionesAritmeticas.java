@@ -20,11 +20,15 @@ public class OperacionesAritmeticas {
 
 		System.out.println("Multiplicacion a * b: " + e);
 
-		//División
-		double f = a / b;
+		//División el double en parentesis es casteo
+		double f = a / (double)b;
+
+        double j = a / (double)b;
 
 		System.out.println("Division a / b: " + f);
 
+        System.out.println("Division a / b: " + j);
+		
 		double g = a / 20.0;
 
 		System.out.println("Division a / 20.0: " + g);

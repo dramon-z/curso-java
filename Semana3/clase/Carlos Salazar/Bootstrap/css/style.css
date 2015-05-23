@@ -1,0 +1,60 @@
+.header
+{
+	height: 60px;
+	width: 100%;
+	background-color: #5cb85c;
+	color: white;
+	text-align: center;
+	margin-bottom: 2px;
+}
+
+.nav
+{
+	height: 60px;
+	width: 100%;
+	background-color:  #5bc0de;
+	color: white;
+	text-align: center;
+	margin-bottom: 2px;
+}
+
+.articles
+{
+	height: 200px;
+	background-color: #337ab7;
+	color: white;
+	text-align: center;
+}
+
+.asides
+{
+	height: 200px;
+	background-color: #d9534f;
+	color: black;
+	text-align: center;
+}
+
+.footer
+{
+	height: 60%;
+	width: 100%;
+	background-color: #f0ad4e;
+	color: white;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 2px;
+}
+
+.contenedor
+{
+	height: 60px;
+	background-color: #eee;
+	color: black;
+	text-align: center;
+	display: block;
+}
+
+div
+{
+	border-radius: 5px;
+}
