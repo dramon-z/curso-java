@@ -1,5 +1,5 @@
 //Importante, tuve muchos problemas con el tema de tildes y ñ caracteres solo del habla español, por lo tanto tuve que compilar con la siguiente linea:
-// javac -encoding ISO-8859-1 Tuedad.java
+// javac -encoding ISO-8859-1 IMSS.java
 
 import java.util.Scanner; //importo la libreria Scanner que es donde se encuentra la clase correspondiente a los inputs akka Scanner
 
@@ -41,7 +41,7 @@ public class IMSS{
 		Scanner sc = new Scanner(System.in);
     	int numero=0;
 	    do {
-	        System.out.println("Ingresa la "+elemento+" de su preferencia, debe ser n\u00famero positivo entre "+rango_izquierdo+"-"+rango_derecho+": "); // \u00fa es el unicode para ú
+	        System.out.println("Ingrese la "+elemento+" de su preferencia, debe ser n\u00famero positivo entre "+rango_izquierdo+"-"+rango_derecho+": "); // \u00fa es el unicode para ú
 	        while (!sc.hasNextInt()) {
 	            System.out.println(elemento+" de su preferencia debe ser n\u00famero positivo entre "+rango_izquierdo+"-"+rango_derecho+": ");
 	            sc.next(); // Importante, no se debe de olvidar ingresar el next para que no vuela a cargar el mismo token
@@ -59,25 +59,37 @@ public class IMSS{
 			  }
 
 	}
+	
+	public static int menu(){
+		System.out.println("Bienvenido al IMSS\n\n\n1. Agregar asegurado.\n2. Concultar asegurado.\n3. Eliminar asegurado.\n4. Salir.");
+		espacio(5); //limpio la pantalla
+		int seleccion = entero("SELECCION",1,4); //Pido entero entre 1 y 4
+		return seleccion;
+	}
 
 	public static void main(String[] args)
 	    {
 	    	
-		espacio(200); //Simulo limpiar pantalla
-		System.out.println("Bienvenido al IMSS\n\n\n1. Agregar asegurado.\n2. Concultar asegurado.\n3. Eliminar asegurado.\n4. Salir.");
-		espacio(5); //limpio la pantalla
-		int seleccion = entero("SELECCION",1,4); //Pido entero entre 1 y 4
-		espacio(4);//Agrego 4 espacios para que se vea bonito
-		switch(seleccion){
-			case 1: System.out.println("Su selecci\u00f3n es 1. Agregar asegurado.");
-					break;
-			case 2: System.out.println("Su selecci\u00f3n es 2. Consultar asegurado.");
-					break;
-			case 3: System.out.println("Su selecci\u00f3n es 3. Eliminar asegurado.");
-					break;
-			case 4: System.out.println("Su selecci\u00f3n es 4. Salir.");
-					break;
-		}
+		int seleccion;
+		String continuar; 
+		do{
+			espacio(100); //Simulo limpiar pantalla
+			seleccion=menu(); //Asigno el numero ingresado por el cliente a la variable seleccion.
+			espacio(100);//Agrego espacio para que se vea bonito
+			switch(seleccion){
+				case 1: System.out.println("Su selecci\u00f3n es 1. Agregar asegurado.\n\n\nPresione ENTER para continuar");
+						continuar = new Scanner(System.in).nextLine();
+						break;
+				case 2: System.out.println("Su selecci\u00f3n es 2. Consultar asegurado.\n\n\nPresione ENTER para continuar");
+						continuar = new Scanner(System.in).nextLine();
+						break;
+				case 3: System.out.println("Su selecci\u00f3n es 3. Eliminar asegurado.\n\n\nPresione ENTER para continuar");
+						continuar = new Scanner(System.in).nextLine();
+						break;
+				case 4: System.out.println("Su selecci\u00f3n es 4. Salir.");
+						break;
+			}
+		}while(seleccion!=4);
 
 			    
 	    }
