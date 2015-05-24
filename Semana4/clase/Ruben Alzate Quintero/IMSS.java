@@ -2,7 +2,7 @@
 // javac -encoding ISO-8859-1 IMSS.java
 
 import java.util.Scanner; //importo la libreria Scanner que es donde se encuentra la clase correspondiente a los inputs akka Scanner
-
+import seguro.Asegurado;
 /*
 La siguiente es la lista unicode para que el texto que se imprima en System.out.print() se vea correcto y no con errores como suele pasar...
 
@@ -61,7 +61,7 @@ public class IMSS{
 	}
 	
 	public static int menu(){
-		System.out.println("Bienvenido al IMSS\n\n\n1. Agregar asegurado.\n2. Concultar asegurado.\n3. Eliminar asegurado.\n4. Salir.");
+		System.out.println("Bienvenido al IMSS\n\n\n1. Agregar asegurado.\n2. Consultar asegurado.\n3. Eliminar asegurado.\n4. Salir.");
 		espacio(5); //limpio la pantalla
 		int seleccion = entero("SELECCION",1,4); //Pido entero entre 1 y 4
 		return seleccion;
@@ -73,12 +73,13 @@ public class IMSS{
 		int seleccion;
 		String continuar; 
 		do{
-			espacio(100); //Simulo limpiar pantalla
+			espacio(1); //Simulo limpiar pantalla
 			seleccion=menu(); //Asigno el numero ingresado por el cliente a la variable seleccion.
-			espacio(100);//Agrego espacio para que se vea bonito
+			espacio(1);//Agrego espacio para que se vea bonito
 			switch(seleccion){
-				case 1: System.out.println("Su selecci\u00f3n es 1. Agregar asegurado.\n\n\nPresione ENTER para continuar");
-						continuar = new Scanner(System.in).nextLine();
+				case 1: /*System.out.println("Su selecci\u00f3n es 1. Agregar asegurado.\n\n\nPresione ENTER para continuar");
+						continuar = new Scanner(System.in).nextLine();*/
+						Asegurado asegurado = new Asegurado();
 						break;
 				case 2: System.out.println("Su selecci\u00f3n es 2. Consultar asegurado.\n\n\nPresione ENTER para continuar");
 						continuar = new Scanner(System.in).nextLine();
