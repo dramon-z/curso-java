@@ -1,0 +1,96 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="../bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="../bower_components/lumx/dist/lumx.css">
+    <link rel="stylesheet" href="../bower_components/mdi/css/materialdesignicons.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="sinosApp" ng-controller="IndexCtrl">
+
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <md-button class="md-icon-button" aria-label="Settings">
+        <md-tooltip>Menú</md-tooltip>
+        <ng-md-icon icon="reorder"></ng-md-icon>
+      </md-button>
+      <h2>
+        <span style="color: #ffffff;">Sistema Nominal en Salud</span>
+      </h2>
+      <md-button class="md-icon-button" aria-label="agenda">
+        <md-tooltip>Agenda</md-tooltip>
+        <md-icon md-svg-icon="../app/images/may1.svg"></md-icon>
+      </md-button>
+      <span flex></span>
+      <md-button class="md-icon-button" aria-label="signos" ng-class="{active:isActive('/')}" ng-href="#/">
+        <md-tooltip>Signos Vitales</md-tooltip>
+        <md-icon md-svg-icon="../app/images/stethoscope8.svg"></md-icon>
+      </md-button>
+      <md-button class="md-icon-button" aria-label="vacunas" ng-class="{active:isActive('/vacunas')}"
+                 ng-href="#/vacunas">
+        <md-tooltip>Esquema de Vacunación</md-tooltip>
+        <md-icon md-svg-icon="../app/images/drug2.svg"></md-icon>
+      </md-button>
+      <md-button class="md-icon-button" aria-label="prevension">
+        <md-tooltip>Prevensión de Enfermedades</md-tooltip>
+        <md-icon md-svg-icon="../app/images/magnifying-glass24.svg"></md-icon>
+      </md-button>
+      <md-button class="md-icon-button" aria-label="sexual">
+        <md-tooltip>Salud Sexual y Reproductiva</md-tooltip>
+      <md-icon md-svg-icon="../app/images/male243.svg"></md-icon>
+    </md-button>
+      <md-button class="md-icon-button" aria-label="embarazo">
+        <md-tooltip>Seguimiento del Embarazo</md-tooltip>
+        <md-icon md-svg-icon="../app/images/ultrasound.svg"></md-icon>
+      </md-button>
+      <md-button class="md-icon-button" aria-label="nota">
+        <md-tooltip>Nota Médica</md-tooltip>
+        <md-icon md-svg-icon="../app/images/notebook24.svg"></md-icon>
+      </md-button>
+      <md-button class="md-icon-button" aria-label="resultados">
+        <md-tooltip>Resultados y Controles</md-tooltip>
+        <md-icon md-svg-icon="../app/images/a.svg"></md-icon>
+      </md-button>
+      <md-button class="md-icon-button" aria-label="promocion">
+        <md-tooltip>Promoción</md-tooltip>
+        <md-icon md-svg-icon="../app/images/first-aid.svg"></md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+
+  <md-content ng-view="" id="content"></md-content>
+
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../bower_components/angular-animate/angular-animate.js"></script>
+    <script src="../bower_components/angular-aria/angular-aria.js"></script>
+    <script src="../bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="../bower_components/angular-resource/angular-resource.js"></script>
+    <script src="../bower_components/angular-route/angular-route.js"></script>
+    <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="../bower_components/angular-touch/angular-touch.js"></script>
+    <script src="../bower_components/angular-material/angular-material.min.js"></script>
+    <script src="../bower_components/angular-material-icons/angular-material-icons.min.js"></script>
+    <script src="../bower_components/velocity/velocity.min.js"></script>
+    <script src="../bower_components/moment/min/moment-with-locales.js"></script>
+    <script src="../bower_components/lumx/dist/lumx.min.js"></script>
+
+
+
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/index.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+</body>
+</html>

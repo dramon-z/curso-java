@@ -1,1 +1,8 @@
-El tiempo de subida tardó mucho, para preguntas estoy a sus ordenes.
+Les recomiendo estos enlaces:
+
+http://yeoman.io/
+https://angularjs.org/
+https://nodejs.org/
+http://bower.io/
+http://gruntjs.com/
+https://material.angularjs.org/latest/#/
