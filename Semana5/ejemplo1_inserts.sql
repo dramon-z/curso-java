@@ -23,7 +23,7 @@ VALUES
 INSERT INTO `asegurados`
 (`id`,`nombre`,`apellido_paterno`,`apellido_materno`,`folio`,`fecha_nacimiento`,`sexo`,`direccion_id`)
 VALUES
-(2,'Persona2','Seoane','García','1001','1982-11-25','Hombre',2);
+(2,'Persona2','Seoane','García','1001','1982-11-25','Mujer',2);
 
 
 
@@ -51,7 +51,7 @@ VALUES
 INSERT INTO `asegurados`
 (`id`,`nombre`,`apellido_paterno`,`apellido_materno`,`folio`,`fecha_nacimiento`,`sexo`,`direccion_id`)
 VALUES
-(4,'Persona4','Seoane','García','1003','1984-11-25','Hombre',4);
+(4,'Persona4','Seoane','García','1003','1984-11-25','Mujer',4);
 
 
 
@@ -63,7 +63,7 @@ VALUES
 INSERT INTO `direcciones`
 (`id`,`Calle`,`numero`,`ciudad`,`estado`,`pais`,`codigo_postal`,`colonia`)
 VALUES
-(5,'Calle1','128 Altos','Villahermosa','Tabasco','México','86080','Reforma');
+(5,'Calle1','128 Altos','Teapa','Tabasco','México','86080','Reforma');
 
 INSERT INTO `asegurados`
 (`id`,`nombre`,`apellido_paterno`,`apellido_materno`,`folio`,`fecha_nacimiento`,`sexo`,`direccion_id`)
@@ -96,7 +96,7 @@ VALUES
 INSERT INTO `direcciones`
 (`id`,`Calle`,`numero`,`ciudad`,`estado`,`pais`,`codigo_postal`,`colonia`)
 VALUES
-(7,'Calle1','128 Altos','Villahermosa','Tabasco','México','86080','Reforma');
+(7,'Calle1','128 Altos','Teapa','Tabasco','México','86080','Reforma');
 
 INSERT INTO `asegurados`
 (`id`,`nombre`,`apellido_paterno`,`apellido_materno`,`folio`,`fecha_nacimiento`,`sexo`,`direccion_id`)
@@ -111,7 +111,7 @@ VALUES
 INSERT INTO `direcciones`
 (`id`,`Calle`,`numero`,`ciudad`,`estado`,`pais`,`codigo_postal`,`colonia`)
 VALUES
-(8,'Calle1','128 Altos','Villahermosa','Tabasco','México','86080','Reforma');
+(8,'Calle1','128 Altos','Cardenas','Tabasco','México','86080','Reforma');
 
 INSERT INTO `asegurados`
 (`id`,`nombre`,`apellido_paterno`,`apellido_materno`,`folio`,`fecha_nacimiento`,`sexo`,`direccion_id`)
@@ -133,7 +133,7 @@ VALUES
 INSERT INTO `asegurados`
 (`id`,`nombre`,`apellido_paterno`,`apellido_materno`,`folio`,`fecha_nacimiento`,`sexo`,`direccion_id`)
 VALUES
-(9,'Persona9','Seoane','García','1008','1989-11-25','Hombre',9);
+(9,'Persona9','Seoane','García','1008','1989-11-25','Mujer',9);
 
 
 
@@ -145,7 +145,7 @@ VALUES
 INSERT INTO `direcciones`
 (`id`,`Calle`,`numero`,`ciudad`,`estado`,`pais`,`codigo_postal`,`colonia`)
 VALUES
-(10,'Calle1','128 Altos','Villahermosa','Tabasco','México','86080','Reforma');
+(10,'Calle1','128 Altos','Cardenas','Tabasco','México','86080','Reforma');
 
 INSERT INTO `asegurados`
 (`id`,`nombre`,`apellido_paterno`,`apellido_materno`,`folio`,`fecha_nacimiento`,`sexo`,`direccion_id`)
