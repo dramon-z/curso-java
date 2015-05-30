@@ -1,3 +1,4 @@
+use curso_java;
 
 drop table if exists asegurados;
 drop table if exists direcciones;
@@ -24,11 +25,18 @@ CREATE TABLE asegurados (
 	sexo ENUM('Hombre','Mujer'),
 	direccion_id INT(10) unsigned NOT NULL,
 	PRIMARY KEY (id),
-	CONSTRAINT `DIRECCION_FK` 
-	FOREIGN KEY (`direccion_id`) 
-    REFERENCES `direcciones` (`id`) 
+	CONSTRAINT DIRECCION_FK 
+	FOREIGN KEY (direccion_id) 
+    REFERENCES direcciones (id) 
     ON DELETE NO ACTION ON UPDATE NO ACTION
 )ENGINE=INNODB;
+
+
+
+
+
+
+
 
 
 
