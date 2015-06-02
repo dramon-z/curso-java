@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Asegurados>
+    <Asegurado>
+        <Nombre>Antonio</Nombre>
+        <Appaterno>Aguilar</Appaterno>
+        <Apmaterno>Estrada</Apmaterno>
+        <Social>21242526</Social>
+        <Sexo/>
+        <Direc>Tepa</Direc>
+        <c>33</c>
+    </Asegurado>
+<Asegurado>
+        <Nombre>Antonio</Nombre>
+        <Appaterno>Aguilar</Appaterno>
+        <Apmaterno>Estrada</Apmaterno>
+        <Social>258749632</Social>
+        <Sexo>Masculino</Sexo>
+        <Direc>Teapa</Direc>
+        <c>33</c>
+    </Asegurado>
+<Asegurado>
+        <Nombre>Pedro</Nombre>
+        <Appaterno>Mayo</Appaterno>
+        <Apmaterno>Juarez</Apmaterno>
+        <Social>6465465</Social>
+        <Sexo>Masculino</Sexo>
+        <Direc>Jonuta</Direc>
+        <c>30</c>
+    </Asegurado>
+</Asegurados>
