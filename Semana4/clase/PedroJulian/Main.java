@@ -1,35 +1,65 @@
 import java.util.Scanner;
+import seguro.AgregarAsegurado;
+
+import xml.ManejadorArchivo;
+
 public class Main {
-	public static void main (String[] args) {
-		PruebaScanner pruebaScanner = new PruebaScanner();
-		PruebaScanner imprimirMenu[];
+
+	public static void main(String[] args) {
+		Main main = new Main();
+		main.imprimirMenu();
 	}
+
 	public void imprimirMenu() {
-		System.out.print("Ingrese un numero: ");
-		Integer numero = new Scanner(System.in).nextInt();
-		ejecutarOpcion(numero);
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("Bienvenido al sistema de registro y consulta del padr贸n del seguro social, a continuaci贸n aparecen las opciones disponibles:");
+		System.out.println("");
+		System.out.println("1. Agregar asegurado");
+		System.out.println("2. Consultar asegurado");
+		System.out.println("3. Eliminar asegurado");
+		System.out.println("4. Salir");
+		System.out.println("");
+		System.out.print("Ingrese el n煤mero de la opci贸n deseada y presione enter: ");
+
+		Scanner scanner = new Scanner(System.in);
+		int opcion = scanner.nextInt();
+		
+		ejecutarOpcion(opcion);
 	}
-	public void  ejecutarOpcion(Integer numero) {
-		switch (numero) {
+
+	public void ejecutarOpcion(int opcion) {
+		switch (opcion) {
 			case 1:
-			System.out.println("Ingresaste el numero 1. presiona enter para continuar");
+				new AgregarAsegurado();
 			break;
 			case 2:
-			System.out.println("Ingresaste el numero 2. presiona enter para continuar");
-			//Hacer algo para la opci髇 2
+				System.out.print("Ingreso el nombre del asegurado que desea buscar: ");
+				String busqueda =  new Scanner(System.in).nextLine();
+				
+				try {
+					ManejadorArchivo manejadorArchivo = new ManejadorArchivo();
+					manejadorArchivo.buscarAsegurado(busqueda);
+				} catch (Exception e) {
+					e.printStackTrace();
+					System.exit(0);
+				}
 			break;
 			case 3:
-			System.out.println("Ingresaste el numero 3. presiona enter para continuar");
-			//Hacer algo para la opci髇 3
+				System.out.print("Haz seleccionado la opci贸n 3. Presione enter para continuar.");
 			break;
 			case 4:
-			System.out.println("Ingresaste el numero 4. presiona enter para continuar");
-			//Hacer algo para la opci髇 4
+				System.out.print("隆Gracias por utilizar el sistema!");
+				System.exit(0);
 			break;
-			}
-	new Scanner(System.in).nextLine();
-	imprimirMenu();
+			default:
+				System.out.print("La opci贸n seleccionada no es v谩lida. Presione enter para continuar.");
+			break;
+		}
+
+		new Scanner(System.in).nextLine();
+		imprimirMenu();
 	}
-	
-	
+
 }
