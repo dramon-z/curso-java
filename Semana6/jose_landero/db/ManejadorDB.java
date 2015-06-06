@@ -144,6 +144,66 @@ public class ManejadorDB {
 		}
 	}
 
+	public int obtenerIdAsegurado(String nombre) throws SQLException {
+		Connection connection = null;
+		Statement statement = null;
+		String query = "select id from asegurados where nombre = '" + nombre + "'";
+		int id = 0;
+
+		try {
+			connection = getConnection();
+
+			statement = connection.createStatement();
+			ResultSet resultSet = statement.executeQuery(query);
+
+			while (resultSet.next()) {
+				id = resultSet.getInt("id");
+				break;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (null != statement) {
+				statement.close();
+			}
+
+			if (null != connection) {
+				connection.close();
+			}
+		}
+
+		return id;
+	}
+
+	public void eliminarAsegurado(int id) throws SQLException {
+		Connection connection = null;
+		PreparedStatement statement = null;
+		String updateQuery = "delete from asegurados where id = ?";
+
+		try {
+			connection = getConnection();
+			statement = connection.prepareStatement(updateQuery);
+
+			statement.setInt(1, id);
+
+			statement.executeUpdate();
+
+			System.out.println("El asegurado se ha eliminado con exito");
+			System.out.println("");
+			System.out.print("Presione enter para continuar...");
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (null != statement) {
+				statement.close();
+			}
+
+			if (null != connection) {
+				connection.close();
+			}
+		}
+	}
+
 	public Connection getConnection() throws SQLException {
 		Properties propiedades = new Properties();
 		propiedades.put("user", "root");

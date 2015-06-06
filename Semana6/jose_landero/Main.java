@@ -55,8 +55,15 @@ public class Main {
 				String busqueda2 =  new Scanner(System.in).nextLine();
 
 				try {
-					ManejadorArchivo manejadorArchivo = new ManejadorArchivo();
-					manejadorArchivo.eliminarAsegurado(busqueda2);
+					ManejadorDB manejadorDb = new ManejadorDB();
+
+					int idAsegurado = manejadorDb.obtenerIdAsegurado(busqueda2);
+
+					if (0 == idAsegurado) {
+						System.out.print("No se ha encontrado un asegurado con el nombre proporcionado. Presione enter para continuar");
+					} else {
+						manejadorDb.eliminarAsegurado(idAsegurado);
+					}
 				} catch (Exception e) {
 					e.printStackTrace();
 					System.exit(0);
