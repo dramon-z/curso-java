@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import seguro.Asegurado;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -29,7 +31,7 @@ public class Main {
 	public void ejecutarOpcion(int opcion) {
 		switch (opcion) {
 			case 1:
-				System.out.print("Haz seleccionado la opción 1. Presione enter para continuar.");
+				Asegurado asegurado = new Asegurado();
 			break;
 			case 2:
 				System.out.print("Haz seleccionado la opcioón 2. Presione enter para continuar.");

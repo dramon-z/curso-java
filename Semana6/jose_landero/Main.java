@@ -1,7 +1,10 @@
 import java.util.Scanner;
 import seguro.AgregarAsegurado;
+import seguro.EditarAsegurado;
 
 import xml.ManejadorArchivo;
+
+import db.ManejadorDB;
 
 public class Main {
 
@@ -19,7 +22,8 @@ public class Main {
 		System.out.println("1. Agregar asegurado");
 		System.out.println("2. Consultar asegurado");
 		System.out.println("3. Eliminar asegurado");
-		System.out.println("4. Salir");
+		System.out.println("4. Editar Asegurado");
+		System.out.println("5. Salir");
 		System.out.println("");
 		System.out.print("Ingrese el número de la opción deseada y presione enter: ");
 
@@ -39,8 +43,8 @@ public class Main {
 				String busqueda =  new Scanner(System.in).nextLine();
 				
 				try {
-					ManejadorArchivo manejadorArchivo = new ManejadorArchivo();
-					manejadorArchivo.buscarAsegurado(busqueda);
+					ManejadorDB manejadorDb = new ManejadorDB();
+					manejadorDb.buscarAsegurado(busqueda);
 				} catch (Exception e) {
 					e.printStackTrace();
 					System.exit(0);
@@ -48,17 +52,27 @@ public class Main {
 			break;
 			case 3:
 				System.out.print("Ingreso el nombre del asegurado que desea buscar: ");
-				String busqueda =  new Scanner(System.in).nextLine();
+				String busqueda2 =  new Scanner(System.in).nextLine();
 
 				try {
-					ManejadorArchivo manejadorArchivo = new ManejadorArchivo();
-					manejadorArchivo.eliminarAsegurado(busqueda);
+					ManejadorDB manejadorDb = new ManejadorDB();
+
+					int idAsegurado = manejadorDb.obtenerIdAsegurado(busqueda2);
+
+					if (0 == idAsegurado) {
+						System.out.print("No se ha encontrado un asegurado con el nombre proporcionado. Presione enter para continuar");
+					} else {
+						manejadorDb.eliminarAsegurado(idAsegurado);
+					}
 				} catch (Exception e) {
 					e.printStackTrace();
 					System.exit(0);
 				}
 			break;
 			case 4:
+				new EditarAsegurado();
+			break;
+			case 5:
 				System.out.print("¡Gracias por utilizar el sistema!");
 				System.exit(0);
 			break;
