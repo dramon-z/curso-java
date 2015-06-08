@@ -9,10 +9,11 @@ public class BD {
 
 		Properties propiedades = new Properties();
 		propiedades.put("user", "root");
-		propiedades.put("password", "admin");
+		propiedades.put("password", "280792");
 
 		Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/asegurados", propiedades);
 		System.out.println("Conexion a la base de datos establecida");
 	}
+	
 
 }
