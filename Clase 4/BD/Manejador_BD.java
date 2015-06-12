@@ -1,14 +1,17 @@
+package BD;
+
 import java.sql.*;
 import java.util.Properties;
 
-public class BD {
+	public class Manejador_BD{
 
-	public static void main(String[] args) throws SQLException {
-		BD bd = new BD();
+		public void BusquedaAsegurado(String[] args) throws SQLException {
+		Manejador_BD bd = new Manejador_BD();
+		
 
 		Connection connection = null;
 		Statement statement = null;
-		String query = "select * from asegurados";
+		String query = "select * from asegurados where nombre= '";
 
 		try {
 			connection = bd.getConnection();
@@ -40,13 +43,19 @@ public class BD {
 			}
 		}
 	}
-
-	public Connection getConnection() throws SQLException {
-		Properties propiedades = new Properties();
-		propiedades.put("user", "root");
-		propiedades.put("password", "sinostea001pa");
-
-		return DriverManager.getConnection("jdbc:mysql://localhost:3306/asegurados", propiedades);
-	}
-
 }
+		
+	
+
+	/*	public Connection getConnection() throws SQLException {
+			Properties propiedades = new Properties();
+			propiedades.put("user", "root");
+			propiedades.put("password", "sinostea001pa");
+
+			return DriverManager.getConnection("jdbc:mysql://localhost:3306/asegurados", propiedades);
+		}
+	*/
+
+	
+
+

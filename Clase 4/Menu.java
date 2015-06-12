@@ -3,12 +3,16 @@ import java.util.Scanner;
 import seguro.Asegurado;
 import Xml.ManejadorArchivoxml;
 
+import java.sql.*;
+import java.util.Properties;
+import BD.Manejador_BD;
+
 
 	public class Menu{
 		public static void main(String[] args) {
 			Menu menu = new Menu();
 			menu.imprimirmenu();
-		}
+			}
 			public void imprimirmenu(){
 							
 			System.out.println("*********************************");
@@ -40,16 +44,36 @@ import Xml.ManejadorArchivoxml;
 					System.out.println("*** Presiona Enter para continuar ***");
 					break;
 				case 2:
-					System.out.println("La opcion deseada es: Consultar Asegurado");
+				System.out.print("Ingreso el nombre del asegurado que desea buscar: ");
+				String busqueda =  new Scanner(System.in).nextLine();
+				
+				try {
+					Manejador_BD manejador_BD = new Manejador_BD();
+					manejador_BD.BusquedaAsegurado(busqueda);
+				} catch (Exception e) {
+					e.printStackTrace();
+					System.exit(0);
+				}
+			break;
+/*					System.out.println("La opcion deseada es: Consultar Asegurado");
 					System.out.println(" ");
-					System.out.print("Ingresa el nombre del asegurado que desea buscar: ");
-					String busqueda =  new Scanner(System.in).nextLine();
+				String busqueda;
+					System.out.print("Ingresa el nombre del asegurado que desea buscar: ");					String busqueda =  new Scanner(System.in).nextLine();
+				new bd.busqueda();
+
+				try {
+					new busqueda
+				} catch (Exception e) {
+					e.printStackTrace();
+					System.exit(0);
+					}
 					System.out.println("*** Presiona Enter para continuar ***");
 					break;
+*/
 				case 3:
 					System.out.println("La opcion deseada es: Eliminar Asegurado");
 					System.out.println(" ");
-					String busqueda
+//*					String busqueda;
 					System.out.println("*** Presiona Enter para continuar ***");
 					break;
 				case 4:
