@@ -8,7 +8,8 @@ public class BD {
 
 		Connection connection = null;
 		PreparedStatement statement = null;
-		String updateQuery = "update asegurados set nombre = 'Jose Luis', apellido = 'Landero Noriega' where id = 1";
+		String updateQuery = "update asegurados set nombre = 'Jose Luis', apellido = 'Landero Noriega' "
+		+ "where id = 1";
 
 		try {
 			connection = bd.getConnection();
