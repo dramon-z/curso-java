@@ -1,16 +1,15 @@
 import java.util.Scanner;
+import seguro.AgregarAsegurado;
+import seguro.EditarAsegurado;
 
-import seguro.Asegurado;
 import Xml.ManejadorArchivoxml;
-
-import java.sql.*;
 import java.util.Properties;
-import BD.Manejador_BD;
+import bd.Manejador_BD;
 
 
-	public class Menu{
+	public class Main{
 		public static void main(String[] args) {
-			Menu menu = new Menu();
+			Main menu = new Main();
 			menu.imprimirmenu();
 			}
 			public void imprimirmenu(){
@@ -24,22 +23,25 @@ import BD.Manejador_BD;
 			System.out.println("1.- Agregar Asegurado");
 			System.out.println("2.- Consultar Asegurado");
 			System.out.println("3.- Eliminar Asegurado");
-			System.out.println("4.- Salir");
+			System.out.println("4.- Editar Asegurado");
+			System.out.println("5.- Salir");
 			System.out.println(" ");
 			System.out.println(" ");
-
 			System.out.print("Elige una opcion: ");
-			Integer numero = new Scanner(System.in).nextInt();
+
+			Scanner scanner = new Scanner(System.in);
+			int numero = scanner.nextInt();
+			
 			ejecutarOpcion(numero);	
 		}
 
-			public void ejecutarOpcion(Integer numero){
+			public void ejecutarOpcion(int numero) {
 
 			switch (numero) {
 				case 1:
 					System.out.println("La opcion deseada es: Agregar Asegurado");
 					System.out.println(" ");
-					new Asegurado();
+					new AgregarAsegurado();
 					System.out.println(" ");
 					System.out.println("*** Presiona Enter para continuar ***");
 					break;
@@ -49,48 +51,51 @@ import BD.Manejador_BD;
 				
 				try {
 					Manejador_BD manejador_BD = new Manejador_BD();
-					manejador_BD.BusquedaAsegurado(busqueda);
+					manejador_BD.busquedaAsegurado(busqueda);
 				} catch (Exception e) {
 					e.printStackTrace();
 					System.exit(0);
 				}
 			break;
-/*					System.out.println("La opcion deseada es: Consultar Asegurado");
-					System.out.println(" ");
-				String busqueda;
-					System.out.print("Ingresa el nombre del asegurado que desea buscar: ");					String busqueda =  new Scanner(System.in).nextLine();
-				new bd.busqueda();
 
-				try {
-					new busqueda
-				} catch (Exception e) {
-					e.printStackTrace();
-					System.exit(0);
-					}
-					System.out.println("*** Presiona Enter para continuar ***");
-					break;
-*/
 				case 3:
 					System.out.println("La opcion deseada es: Eliminar Asegurado");
 					System.out.println(" ");
-//*					String busqueda;
-					System.out.println("*** Presiona Enter para continuar ***");
-					break;
+					System.out.print("Ingresa el nombre del Asegurado que desea buscar: ");
+					String busqueda2 = new Scanner(System.in).nextLine();
+
+					try {
+						Manejador_BD manejador_Bd = new Manejador_BD();
+						int idAsegurado = manejador_Bd.obtenerIdAsegurado(busqueda2);
+
+						if (0 == idAsegurado) {
+							System.out.print("No se ha encontrado el Asegurado en la Base de Datos... Presiona ENTER para continuar");
+						} else {
+							manejador_Bd.eliminarAsegurado(idAsegurado);
+						}
+					} catch (Exception e) {
+						e.printStackTrace();
+						System.exit(0);
+					}
+				break;
+					
 				case 4:
 					System.out.println("La opcion deseada es: Salir");
 					System.out.println(" ");
+					new EditarAsegurado();
+				break;
+
+				case 5:
 					System.out.println("*** Bye Bye ***");
 					System.exit(0);
 					break;
+					default:
+						System.out.print("La opcion seleccionada no es válida....Presiona ENTER para continuar");
+						break;
 			}
 			
 			new Scanner(System.in).nextLine();
 			imprimirmenu();				
+		}
 		
-			
-
-	}
-	
-	
-	
 }
