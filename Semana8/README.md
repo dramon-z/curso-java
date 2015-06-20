@@ -123,6 +123,7 @@ public class IndexController {
 	* required: indicamos si es requerido o no 
 	* defaultValue: se le asigna un valor por default	
 
+IndexController.java
 ```java
 ...
 	@RequestMapping(method=RequestMethod.GET)
@@ -133,8 +134,10 @@ public class IndexController {
 ...
 ```
 
+
 * Recibir mas de un parametro, solo se enlista en los argumentos
 
+IndexController.java
 ```java
 ...
 	@RequestMapping(method=RequestMethod.GET)
@@ -149,9 +152,98 @@ public class IndexController {
 	}
 ...
 ```
-
+index.jsp
 ```html
 ...
 	<h1>Hola ${nombre}, tiene ${edad}, de la ciudad ${ciudad}</h1>
+...
+```
+
+## Trabajando con formularios 
+
+* Realizamos los siguientes cambios en nuestros html index.jsp 
+
+	* creamos un formulario donde capturemos los que le enviaremos a la vista y lo enviamos por "POST"
+
+index.jsp
+```html
+...
+<form action="" method="post">
+		<table>
+			<tr>
+				<td>Nombre:</td>
+				<td><input type="text" name="nombre"/></td>
+			</tr>
+			<tr>
+				<td>Edad:</td>
+				<td><input type="text" name="edad"/></td>
+			</tr>
+			<tr>
+				<td>Ciudad</td>
+				<td><input type="text" name="ciudad"/></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><td><button type="submit">Guardar</button></td></td>
+			</tr>
+		</table>
+		</form>
+...
+```
+
+* Creamos un nuevo jsp con el nombre resultado en el cual recibiremos lo que enviamos
+
+resultado.jsp
+```jsp
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Resultado</h1>
+		<table>
+			<tr>
+				<td>Nombre:</td>
+				<td>${nombre}</td>
+			</tr>
+			<tr>
+				<td>Edad:</td>
+				<td>${edad}</td>
+			</tr>
+			<tr>
+				<td>Ciudad</td>
+				<td>${ciudad}</td>
+			</tr>
+		</table>
+</body>
+</html>
+
+```
+
+* Modificamos nuestros metodods dentro de la clase IndexController
+	
+	* Creamos un metodo formAction que recibira nuestros parametros por "POST" y lo enviara al nuevo resultado.jsp
+
+IndexController.java
+```java
+...
+	@RequestMapping(method=RequestMethod.GET)
+	public String indexAction(Model model){
+		return "index";
+	}	
+	@RequestMapping(method=RequestMethod.POST)
+	public String formAction(Model model,
+			@RequestParam String nombre,
+			@RequestParam Integer edad,
+			@RequestParam String ciudad){
+		model.addAttribute("nombre",nombre);
+		model.addAttribute("edad",edad);
+		model.addAttribute("ciudad",ciudad);
+		return "resultado";
+	}
 ...
 ```
