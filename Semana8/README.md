@@ -132,3 +132,26 @@ public class IndexController {
 	}
 ...
 ```
+
+* Recibir mas de un parametro, solo se enlista en los argumentos
+
+```java
+...
+	@RequestMapping(method=RequestMethod.GET)
+	public String indexAction(Model model,
+			@RequestParam(value="nombre",required=false,defaultValue="Desconocido") String nombre,
+			@RequestParam Integer edad,//POR DEFUALT SON REQUERIDO SI NO SE LE INDICA LO CONTRARIO
+			@RequestParam String ciudad){
+		model.addAttribute("nombre",nombre);
+		model.addAttribute(edad);//TOMA EL NOMBRE DE LA VARIABLE PARA SE USADO EN EL CONTEXTO
+		model.addAttribute(ciudad);
+		return "index";
+	}
+...
+```
+
+```html
+...
+	<h1>Hola ${nombre}, tiene ${edad}, de la ciudad ${ciudad}</h1>
+...
+```
