@@ -95,7 +95,7 @@ public class IndexController {
 
 * se agrega el argumento de tipo Model y se asigna nuestro prametro en el controlador
 
-```sh
+```java
 ...
 	@RequestMapping(method=RequestMethod.GET)
 	public String indexAction(Model model){
@@ -107,7 +107,7 @@ public class IndexController {
 
 * Se agrega la variable en nuestro jsp
 
-```sh
+```html
 	...
 	<h1>Hola ${nombre}</h1>
 	...
