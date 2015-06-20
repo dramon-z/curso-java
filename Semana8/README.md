@@ -118,9 +118,10 @@ public class IndexController {
 
 * Se tiene que agregar la notacion @RequestParam para agregar el parametro
 * Los atributos que pude tener @RequestParam
-> * value: el nombre por el cual debemos enviar el parametro
-> * required: indicamos si es requerido o no 
-> * defaultValue: se le asigna un valor por default	
+	
+	* value: el nombre por el cual debemos enviar el parametro
+	* required: indicamos si es requerido o no 
+	* defaultValue: se le asigna un valor por default	
 
 ```java
 ...
