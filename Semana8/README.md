@@ -7,6 +7,7 @@
 
 * Configuramos nuestro web.xml, se encuentra en /WEB-INF/web.xml
 
+web.xml
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">	  
@@ -33,7 +34,7 @@
 
 * Se configura el /WEB-INF/web-context.xml
 
-
+web-context.xml
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
@@ -63,6 +64,7 @@
 
 * Creamos una clase Controlador en nuestro paquete mx.gob.tabasco.spring.controllers
 
+IndexController.java
 ```java
 @Controller //ESTA ANOTACION INDICA QUE NUESTRA CLASE ES UN CONTROLADOR
 @RequestMapping(value="/") //INDICAMOS NUESTRA RUTA A LA CUAL RESPONDE ESTE CONTROLADOR
@@ -76,7 +78,8 @@ public class IndexController {
 
 * Creamos nuestra vista en en /WEB-INF/views/index.jsp
 
-```html
+index.jsp
+```jsp
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -95,6 +98,7 @@ public class IndexController {
 
 * se agrega el argumento de tipo Model y se asigna nuestro prametro en el controlador
 
+IndexController.java
 ```java
 ...
 	@RequestMapping(method=RequestMethod.GET)
@@ -107,7 +111,8 @@ public class IndexController {
 
 * Se agrega la variable en nuestro jsp
 
-```html
+index.jsp
+```jsp
 	...
 	<h1>Hola ${nombre}</h1>
 	...
