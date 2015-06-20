@@ -253,7 +253,7 @@ IndexController.java
 ...
 ```
 
-##Manejar parametros mediante un Plain Old java object(POJO)
+##Manejar parametros mediante un Plain Old Java Object(POJO)
 
 * Se crea un paquete con el siguiente nombre mx.gob.tabasco.spring.vo el cual tendra nuetro objeto POJO
 * Creamos nuesto objeto POJO dentro del paquete
@@ -322,3 +322,86 @@ public String formAction(Model model,
 }
 ...
 ```
+
+
+##Persistencia de base de datos
+
+* Click derecho al proyecto
+	* ->seleccione property
+	* ->seleccione property faces 
+	* checked a JPA
+	* ->click a OK
+
+* Se crea el archivo META-INF/presistence.xml
+	* se configura el Presisten provider con el siguiente valor:
+		* org.hibernate.jpa.HibernatePersistenceProvider
+
+* Se crea un paquete con el siguiente nombre
+	* mx.gob.tabasco.sprint.entities
+
+* Se da click derecho  new y others busquen dentro 
+	* JPA Entities from Tables
+	* le dan aceptar
+* En Generate Custom Entities
+	*  Seleccione una nueva conexion
+		* Seleccione mysql
+		* Dentro en New Connection Profile
+			* Seleccione el driver
+				* En caso de no tenerlo
+				* Click en nuevo seleccione la ultima version del dirver
+				* En la pestaña JAR list seleccione la ubicacion de su jar del driver de mysql
+				* En property configure la conexion de la base de datos y dan ok
+			* Seleccione la configuracion y damos testconexion y si es exitoso damos ok
+
+	* Seleccionamos el esquema y nos muestra todas las tablas de nuestra base de datos y las seleccionamos
+	* Damos siguiente y nos muestra las relaciones y damos siguiente
+	* En key generator seleccionamos identity
+	* En package nuestra ruta del paquete entities
+	* Siguiente y nos sercioramos de la configuracion de nuestras entidades id como Long y Entity access en property y damos finalizar
+
+* En archivo META-INF presistence.xml
+	* Seleccionamos la pestaña connection
+		* seleccionamos Transaction type como Resource Local
+		* Seleccionamos Populate from connection y nos acompleta nuestra configuracion
+
+* En nuestro WEB-INF/web.xml y agregamos lo siguiente
+
+web.xml
+```xml
+...
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/data-context.xml</param-value>
+	</context-param>
+	<!-- Bootstraps the root web application context before servlet initialization -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+...  
+```
+
+* Creamos nuestro archivo data-context.xml dentro de WEB-INF
+
+data-context.xml
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<bean class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
+		<!--"MiProyecto" es el nombre asignado en mi archivo persistence.xml-->
+		<property name="persistenceUnitName" value="MiProyecto"></property>
+	</bean>
+
+	<context:component-scan base-package="mx.gob.tabasco.spring.services"></context:component-scan>
+	
+</beans>
+
+```
+
+* Creamos el paquete de servicios mx.gob.tabasco.spring.services 
