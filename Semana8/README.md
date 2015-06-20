@@ -1,11 +1,11 @@
 #Spring
 
 
-#Configuracion basica
+##Configuracion basica
 
--Creamos el proyecto como Dynamic web proyect
+###Creamos el proyecto como Dynamic web proyect
 
--Configuramos nuestro web.xml, se encuentra en /WEB-INF/web.xml
+###Configuramos nuestro web.xml, se encuentra en /WEB-INF/web.xml
 
 	<?xml version="1.0" encoding="UTF-8"?>
 	<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
@@ -17,7 +17,7 @@
 			<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 			<init-param>
 				<param-name>contextConfigLocation</param-name>
-				<!-- Se asigna la ubicacion del context-->
+				<!-- **Se asigna la ubicacion del context**-->
 				<param-value>/WEB-INF/web-context.xml</param-value>
 			</init-param>
 			<load-on-startup>1</load-on-startup>
@@ -30,7 +30,7 @@
 		</servlet-mapping>
 	</web-app>
 
--Se configura el /WEB-INF/web-context.xml
+###Se configura el /WEB-INF/web-context.xml
 
 	<?xml version="1.0" encoding="UTF-8"?>
 	<beans xmlns="http://www.springframework.org/schema/beans"
@@ -58,7 +58,7 @@
 		</bean>
 	</beans>
 
--Creamos una clase Controlador en nuestro paquete mx.gob.tabasco.spring.controllers
+###Creamos una clase Controlador en nuestro paquete mx.gob.tabasco.spring.controllers
 
 	@Controller //ESTA ANOTACION INDICA QUE NUESTRA CLASE ES UN CONTROLADOR
 	@RequestMapping(value="/") //INDICAMOS NUESTRA RUTA A LA CUAL RESPONDE ESTE CONTROLADOR
@@ -71,7 +71,7 @@
 	}
 
 
--Creamos nuestra vista en en /WEB-INF/views/index.jsp
+###Creamos nuestra vista en en /WEB-INF/views/index.jsp
 
 	<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	    pageEncoding="ISO-8859-1"%>
