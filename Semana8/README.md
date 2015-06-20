@@ -405,3 +405,82 @@ data-context.xml
 ```
 
 * Creamos el paquete de servicios mx.gob.tabasco.spring.services 
+
+
+* Creamos nuestra interface en nuestro paquete services como sigue
+
+AseguradoServicio.java
+```java
+package mx.gob.tabasco.spring.services;
+
+import java.util.List;
+import mx.gob.tabasco.spring.entities.Asegurado;
+
+public interface AseguradoService {	
+
+	public List<Asegurado> findAll();	
+	public Asegurado getById(Long id);	
+	public void save(Asegurado asegurado);	
+}
+```
+
+* En nuestro IndexController cambiamos nuestro import de Asegurado de vo por el de la intidad
+
+* Agremaos la linea al inicio de la clase en IndexController
+
+IndexController.java
+```java
+...
+@Autowired
+private AseguradoService aseguradoSerice;
+...
+```
+
+* Modificamos el metrodo formAction
+	* agregamos aseguradoSerice.save y quitamos los atributos de model
+
+IndexController.java
+```java
+@RequestMapping(value="/resultado",method=RequestMethod.POST)
+public String formAction(Model model,Asegurado asegurado){
+	aseguradoSerice.save(asegurado);
+	return "resultado";
+}
+```
+
+* Agregamos el siguiente paquete mx.gob.tabasco.spring.services.impl
+
+* Creamos nuestra clase de implementacion del servicio dentro de nuestro paquete
+
+AseguradoServiceImpl.java
+```java
+package mx.gob.tabasco.spring.services.impl;
+
+import java.util.List;
+import org.springframework.stereotype.Service;
+import mx.gob.tabasco.spring.entities.Asegurado;
+import mx.gob.tabasco.spring.services.AseguradoService;
+
+@Service//SE AGREGA EL TAG DE @Service PARA INDICARLE A SPRING QUE ES UNA IMPLEMENTACION DE UN SERVICIO
+public class AseguradoServiceImpl implements AseguradoService {
+
+	@Override
+	public List<Asegurado> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Asegurado getById(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void save(Asegurado asegurado) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+```
