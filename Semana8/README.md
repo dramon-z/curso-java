@@ -252,3 +252,73 @@ IndexController.java
 	}
 ...
 ```
+
+##Manejar parametros mediante un Plain Old java object(POJO)
+
+* Se crea un paquete con el siguiente nombre mx.gob.tabasco.spring.vo el cual tendra nuetro objeto POJO
+* Creamos nuesto objeto POJO dentro del paquete
+	* Debemos tomar en cuenta que el nombre de nuestras variables debe de coicidir con el de los parametros que enviamos desde el formulario
+
+Asegurado.java
+```java
+package mx.gob.tabasco.spring.vo;
+//Plain Old java object(POJO)
+public class Asegurado {	
+	private String nombre;
+	private Integer edad;
+	private String sexo;
+	private String numeroSeguroSocial;
+	private String apellido;	
+	public String getApellido() {
+		return apellido;
+	}
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public Integer getEdad() {
+		return edad;
+	}
+	public void setEdad(Integer edad) {
+		this.edad = edad;
+	}
+	public String getSexo() {
+		return sexo;
+	}
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
+	}
+	public String getNumeroSeguroSocial() {
+		return numeroSeguroSocial;
+	}
+	public void setNumeroSeguroSocial(String numeroSeguroSocial) {
+		this.numeroSeguroSocial = numeroSeguroSocial;
+	}
+}
+```
+
+* Nuestro metodo de recepcion quedaria de la siguiente manera
+
+
+IndexController.java
+```java
+...
+@RequestMapping(value="/resultado",method=RequestMethod.POST)
+public String formAction(Model model,
+	Asegurado asegurado //AGREGAMOS NUESTRO OBJETO COMO ARGUMENTO DEL METODO Y RECIBIRA LOS PARAMENTROS ENVIADOS DEL FORMULARIO
+	){
+	//ACCEDEMOS A CADA VALOR DE LOS PARAMETROS MEDIANTE LOS GETTERS DE NUESTRO OBJETO
+	model.addAttribute("nombre",asegurado.getNombre());
+	model.addAttribute("edad",asegurado.getEdad());
+	model.addAttribute("apellido",asegurado.getApellido());
+	model.addAttribute("numeroSeguroSocial",asegurado.getNumeroSeguroSocial());
+	model.addAttribute("sexo",asegurado.getSexo());
+	return "resultado";
+}
+...
+```
