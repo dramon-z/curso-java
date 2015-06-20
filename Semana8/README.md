@@ -30,46 +30,49 @@
 	</servlet-mapping>
 </web-app>
 ```
-###Se configura el /WEB-INF/web-context.xml
 
-	<?xml version="1.0" encoding="UTF-8"?>
-	<beans xmlns="http://www.springframework.org/schema/beans"
-		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		xmlns:context="http://www.springframework.org/schema/context"
-		xmlns:mvc="http://www.springframework.org/schema/mvc"
-		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
-			http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
-		<!--SE INDICA EL PACKAGE QUE CONTIENE NUESTROS CONTROLADOR-->
-		<context:component-scan base-package="mx.gob.tabasco.spring.controllers"></context:component-scan>
-		<!--SE INDICA QUE SE TRABAJARA CON ANOTACIONES EL MVC-->
-		<mvc:annotation-driven></mvc:annotation-driven>
-		
-		<!--SE INDICA LA UBICACION DE NUESTRAS VISTAS -->
-		<bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
-			<property name="viewResolvers">
-				<list>
-					<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-						<property name="prefix" value="/WEB-INF/views/"></property>
-						<property name="suffix" value=".jsp"></property>
-					</bean>
-				</list>
-			</property>
-		</bean>
-	</beans>
+*Se configura el /WEB-INF/web-context.xml
 
-###Creamos una clase Controlador en nuestro paquete mx.gob.tabasco.spring.controllers
 
-	@Controller //ESTA ANOTACION INDICA QUE NUESTRA CLASE ES UN CONTROLADOR
-	@RequestMapping(value="/") //INDICAMOS NUESTRA RUTA A LA CUAL RESPONDE ESTE CONTROLADOR
-	public class IndexController {
-		
-		@RequestMapping(method=RequestMethod.GET)//SE DEFININE EL TIPO DE PETICON QUE RESPONDE NUESTRO METODO
-		public String indexAction(){
-			return "index";//SE INDICA LA UBICACION DE NUESTRA VISTA
-		}
+```sh
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+	<!--SE INDICA EL PACKAGE QUE CONTIENE NUESTROS CONTROLADOR-->
+	<context:component-scan base-package="mx.gob.tabasco.spring.controllers"></context:component-scan>
+	<!--SE INDICA QUE SE TRABAJARA CON ANOTACIONES EL MVC-->
+	<mvc:annotation-driven></mvc:annotation-driven>	
+	<!--SE INDICA LA UBICACION DE NUESTRAS VISTAS -->
+	<bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+		<property name="viewResolvers">
+			<list>
+				<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+					<property name="prefix" value="/WEB-INF/views/"></property>
+					<property name="suffix" value=".jsp"></property>
+				</bean>
+			</list>
+		</property>
+	</bean>
+</beans>
+```
+
+*Creamos una clase Controlador en nuestro paquete mx.gob.tabasco.spring.controllers
+
+```sh
+@Controller //ESTA ANOTACION INDICA QUE NUESTRA CLASE ES UN CONTROLADOR
+@RequestMapping(value="/") //INDICAMOS NUESTRA RUTA A LA CUAL RESPONDE ESTE CONTROLADOR
+public class IndexController {		
+	@RequestMapping(method=RequestMethod.GET)//SE DEFININE EL TIPO DE PETICON QUE RESPONDE NUESTRO METODO
+	public String indexAction(){
+		return "index";//SE INDICA LA UBICACION DE NUESTRA VISTA
 	}
-
+}
+```
 
 ###Creamos nuestra vista en en /WEB-INF/views/index.jsp
 
