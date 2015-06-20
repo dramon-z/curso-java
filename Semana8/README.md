@@ -31,7 +31,7 @@
 </web-app>
 ```
 
-*Se configura el /WEB-INF/web-context.xml
+* Se configura el /WEB-INF/web-context.xml
 
 
 ```sh
@@ -61,7 +61,7 @@
 </beans>
 ```
 
-*Creamos una clase Controlador en nuestro paquete mx.gob.tabasco.spring.controllers
+* Creamos una clase Controlador en nuestro paquete mx.gob.tabasco.spring.controllers
 
 ```sh
 @Controller //ESTA ANOTACION INDICA QUE NUESTRA CLASE ES UN CONTROLADOR
@@ -74,20 +74,41 @@ public class IndexController {
 }
 ```
 
-###Creamos nuestra vista en en /WEB-INF/views/index.jsp
+* Creamos nuestra vista en en /WEB-INF/views/index.jsp
 
-	<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	    pageEncoding="ISO-8859-1"%>
-	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-	<html>
-	<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>Insert title here</title>
-	</head>
-	<body>
-			<h1>Hola mundo</h1>
-	</body>
-	</html>
+```sh
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+		<h1>Hola mundo</h1>
+</body>
+</html>
+```
 
+## Envio de parametros desde la vista
 
--
+* se agrega el argumento de tipo Model y se asigna nuestro prametro en el controlador
+
+```sh
+...
+	@RequestMapping(method=RequestMethod.GET)
+	public String indexAction(Model model){
+		model.addAttribute("nombre","mi nombre");
+		return "index";
+	}
+...
+```
+
+* Se agrega la variable en nuestro jsp
+
+```sh
+	...
+	<h1>Hola ${nombre}</h1>
+	...
+```
