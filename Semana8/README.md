@@ -451,6 +451,9 @@ public String formAction(Model model,Asegurado asegurado){
 * Agregamos el siguiente paquete mx.gob.tabasco.spring.services.impl
 
 * Creamos nuestra clase de implementacion del servicio dentro de nuestro paquete
+	* Se agrega un EntityManagerFactory 
+	* En nuestro metodo save
+		* Se usa el entity manager para iniciar la transaccion de guardado
 
 AseguradoServiceImpl.java
 ```java
@@ -461,26 +464,120 @@ import org.springframework.stereotype.Service;
 import mx.gob.tabasco.spring.entities.Asegurado;
 import mx.gob.tabasco.spring.services.AseguradoService;
 
-@Service//SE AGREGA EL TAG DE @Service PARA INDICARLE A SPRING QUE ES UNA IMPLEMENTACION DE UN SERVICIO
+@Service//SE AGREGA EL TAG DE @Service PARA INDICARLE A SPRING QUE ES UNA IMPLEMENTACION DEL SERVICIO
 public class AseguradoServiceImpl implements AseguradoService {
+	@PersistenceUnit
+	private EntityManagerFactory emf;
 
 	@Override
 	public List<Asegurado> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		EntityManager em = emf.createEntityManager();
+		
+		return em.createNamedQuery("Asegurado.findAll",Asegurado.class).getResultList();
 	}
 
 	@Override
 	public Asegurado getById(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		EntityManager em = emf.createEntityManager();
+		
+		return em.find(Asegurado.class,id);
 	}
 
 	@Override
 	public void save(Asegurado asegurado) {
-		// TODO Auto-generated method stub
+		EntityManager em = emf.createEntityManager();
+		em.getTransaction().begin();
+		em.merge(asegurado);
+		em.getTransaction().commit();
 
 	}
 
 }
+```
+
+* Podemos probar nuestra aplicacion
+
+* Podemos adaptar nuesto proyecto para controlar los errores de respuesta de la siguiente forma
+
+* En el IndexController modificamos el metodo del form	
+
+IndexController.java
+```java
+...
+	@RequestMapping(value="/resultado",method=RequestMethod.POST)
+	public String formAction(Model model,Asegurado asegurado){
+		String mensaje = "Se guardar de forma correcta";
+		try{
+			aseguradoSerice.save(asegurado);			
+		}catch(Exception e){
+			mensaje = "Ocurrio un error al momento de guardar";
+		}
+		model.addAttribute("mensaje", mensaje);
+		return "resultado";
+	}
+...
+```
+
+* Modificamos de igual forma nuestro jsp de resultado solo dejando la etiqueta h1 para el mensaje
+
+resultado.jsp
+```jsp
+...
+<body>
+	<h1>${mensaje}</h1>
+</body>
+...
+```
+
+## Listar Asegurados
+
+* En nuestro controlador agregamos el siguiente metodo al cual le agregamos los medos de busqueda
+
+IndexController.java
+```java
+...
+@RequestMapping
+public String listaAction(Model model){
+	List<Asegurado> asegurados = aseguradoSerice.findAll();
+	model.addAttribute("asegurados", asegurados);
+	return "lista";
+}
+...
+```
+
+* Creamos nuestro jsp que nos motrara esta lista
+
+lista.jsp
+```jsp
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Indice de asegurados</h1>
+	<table border=1>
+		<tr>
+			<th>Nombre</th>
+			<th>Edad</th>
+			<th>Sexo</th>
+			<th>Numero de Seguro</th>			
+		</tr>
+		<c:forEach items="${asegurados}" var="asegurado">
+			<tr>
+				<td>${asegurado.getNombre()}</td>
+				<td>${asegurado.getEdad()}</td>
+				<td>${asegurado.getSexo()}</td>
+				<td>${asegurado.getNumeroSeguroSocial()}</td>
+			</tr>
+		</c:forEach>
+	</table>
+
+</body>
+</html>
 ```
