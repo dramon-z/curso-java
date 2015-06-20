@@ -112,3 +112,22 @@ public class IndexController {
 	<h1>Hola ${nombre}</h1>
 	...
 ```
+## Recibir parametros en mi vista
+
+* Recibir parametros por url ejemplo: /miweb/?nombre=daniel
+
+* Se tiene que agregar la notacion @RequestParam para agregar el parametro
+* Los atributos que pude tener @RequestParam
+> * value: el nombre por el cual debemos enviar el parametro
+> * required: indicamos si es requerido o no 
+> * defaultValue: se le asigna un valor por default	
+
+```java
+...
+	@RequestMapping(method=RequestMethod.GET)
+	public String indexAction(Model model,@RequestParam(value="nombre",required=false,defaultValue="Desconocido") String nombre){
+		model.addAttribute("nombre",nombre);
+		return "index";
+	}
+...
+```
