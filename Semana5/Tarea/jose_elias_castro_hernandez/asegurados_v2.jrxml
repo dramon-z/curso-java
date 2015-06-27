@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="asegurados_v2" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="61691d80-7e4a-43db-8c1d-c338f8e71826">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from vw_asegurados order by estado,ciudad]]>
+	</queryString>
+	<field name="id" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre_completo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="folio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha_nacimiento" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="edad2" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="decada1" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sexo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="calle" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="numero" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ciudad" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="estado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pais" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="Grupo estado">
+		<groupExpression><![CDATA[$F{estado}]]></groupExpression>
+		<groupHeader>
+			<band height="20">
+				<textField>
+					<reportElement x="8" y="0" width="100" height="20" uuid="5982eabe-f289-4464-852b-d90282f863de"/>
+					<textFieldExpression><![CDATA[$F{estado}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement mode="Opaque" x="0" y="19" width="555" height="1" forecolor="#FF0000" uuid="d324b4e4-5499-4bdb-bcc4-c4d74632a33d"/>
+				</line>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="Grupo ciudad">
+		<groupExpression><![CDATA[$F{ciudad}]]></groupExpression>
+		<groupHeader>
+			<band height="20">
+				<rectangle>
+					<reportElement x="100" y="0" width="455" height="20" backcolor="#0066CC" uuid="67215087-e6d9-41de-be7d-4bb3c41860c0"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="100" y="0" width="54" height="20" forecolor="#FFFF00" uuid="9f4ffb0f-70c3-4419-8396-86e0b995835c"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Folio]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="165" y="0" width="178" height="20" forecolor="#FFFF00" uuid="8797992c-1cbe-4ec9-b561-9051b01c97a0"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[nombre_completo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="405" y="0" width="73" height="20" forecolor="#FFFF00" uuid="6f20eb59-31e2-44b9-b08c-66878033e656"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Sexo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="343" y="0" width="62" height="20" forecolor="#FFFF00" uuid="403f6295-ae01-41fd-8c96-5c24a5e839a8"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Edad]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="31" y="0" width="69" height="20" uuid="8167d941-12da-4cee-9cf5-1517f0aabc95"/>
+					<textFieldExpression><![CDATA[$F{ciudad}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="488" y="0" width="67" height="20" forecolor="#FFFF00" uuid="91deec25-b630-4224-82f1-8125197f9b9e"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Estado]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="67" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="39" uuid="fa0f575c-10cc-4a92-9cbe-42b44438181f"/>
+				<textElement textAlignment="Center">
+					<font size="26" isBold="true" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[ASEGURADOS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="35" forecolor="#0033CC" uuid="d9feab2c-0bdc-4e09-94ff-f00f9e4c0c92"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Encabezado de la pagina]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="430" y="15" width="85" height="20" uuid="a1142832-9e27-4f65-845a-fd008f95ed36"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="15" width="40" height="20" uuid="314ffbeb-4221-4995-8188-9814b65a409a"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="8" y="15" width="100" height="20" uuid="0129c7a6-9b7a-4977-9c5d-89bb35cd05be"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="100" y="2" width="54" height="20" uuid="29142e32-3420-41ab-9776-fb9f6a36dabf"/>
+				<textFieldExpression><![CDATA[$F{folio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="165" y="2" width="178" height="20" uuid="bd33614a-7a75-4248-ac38-fce70e48237c"/>
+				<textFieldExpression><![CDATA[$F{nombre_completo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="343" y="2" width="62" height="20" uuid="f183cc11-acdb-478a-978f-a2dd3c0d8f3a"/>
+				<textFieldExpression><![CDATA[$F{edad2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="405" y="2" width="73" height="20" uuid="edeffa4c-0e4b-4abb-98d6-b2b7a525f4d0"/>
+				<textFieldExpression><![CDATA[$F{sexo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="488" y="2" width="67" height="20" uuid="8396bc42-0447-4d6f-a412-d6ba814e15d6"/>
+				<textFieldExpression><![CDATA[$F{estado}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="41" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<elementGroup/>
+		</band>
+	</summary>
+</jasperReport>

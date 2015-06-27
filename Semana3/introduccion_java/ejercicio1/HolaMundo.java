@@ -1,7 +1,12 @@
+/*
+Este programa imprime un saludo en consola utiliza variable que almacena un nombre.
+*/
 public class HolaMundo {
 
 	public static void main(String[] args) {
-		System.out.println("¡Hola mundo!");
+		//Variable que almacena un nombre
+		String nombre= "Panchito";
+		System.out.println("¡Hola " + nombre + "!");
 	}
 
 }
