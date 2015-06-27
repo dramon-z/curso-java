@@ -13,7 +13,7 @@ import org.w3c.dom.*;
 
 public class ManejadorArchivo {
 
-	private static final String RUTA_ARCHIVO = "c:\\users\\joselandero\\documents\\base_datos.xml";
+	private static final String RUTA_ARCHIVO = "c:\\users\\daniel\\documents\\base_datos.xml";
 
 	public ManejadorArchivo() {
 		verificarExistencia();
@@ -51,6 +51,10 @@ public class ManejadorArchivo {
 		transformer.transform(source, result);
 
 		System.out.print("El archivo de base de datos no existía y lo creamos, por favor presione enter para continuar");
+	}
+
+	public void guardarAsegurado(String nombre, String numeroSS, Integer edad, String sexo, String direccion) {
+		
 	}
 
 }

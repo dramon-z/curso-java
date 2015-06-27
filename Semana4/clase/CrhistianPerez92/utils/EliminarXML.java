@@ -22,15 +22,7 @@ public class EliminarXML{
 		DocumentBuilder builder = factory.newDocumentBuilder();
 		Document document = builder.parse(file);
 
-		Element aseguradosElement = document.getDocumentElement();
-		Element asegurado = document.createElement("asegurado");
-		Element nombreElement = document.createElement("nombre");
 		
-		nombreElement.setTextContent("jose");
-
-		asegurado.appendChild(nombreElement);
-
-		aseguradosElement.appendChild(asegurado);
 		
 
 		TransformerFactory transformerFactory = TransformerFactory.newInstance();

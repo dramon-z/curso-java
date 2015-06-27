@@ -1,6 +1,7 @@
 package seguro;
 
 import java.util.Scanner;
+import xml.ManejadorArchivo;
 
 public class AgregarAsegurado {
 
@@ -45,8 +46,8 @@ public class AgregarAsegurado {
 		System.out.print("¿La información es correta (si/no)?: ");
 		String esCorrecta = new Scanner(System.in).next();
 
-		if (esCorrecta == "si") {
-			System.out.print("Ingresaste " + esCorrecta + ", presiona enter para continuar");
+		if ("si".equals(esCorrecta)) {
+			ManejadorArchivo manejadorArchivo = new ManejadorArchivo();
 		} else {
 			System.out.print("Ingresaste " + esCorrecta + ", presiona enter para continuar");
 		}

@@ -13,6 +13,10 @@ import javax.xml.xpath.*;
 import org.xml.sax.SAXException;
 
 import org.w3c.dom.*;
+import java.sql.*;
+import java.util.Properties;
+
+
 
 
 public class ManejadorArchivoxml {
@@ -105,8 +109,11 @@ public class ManejadorArchivoxml {
 			outputStream.close();
 		}
 
+
+
 		public void buscarAsegurado(String busqueda) 
 			throws ParserConfigurationException, TransformerConfigurationException, FileNotFoundException, TransformerException, IOException, SAXException, XPathExpressionException {
+			
 			File file = new File(RUTA_ARCHIVO);
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder builder = factory.newDocumentBuilder();
@@ -135,10 +142,11 @@ public class ManejadorArchivoxml {
 				System.out.println("Dirección: " + direccion.getTextContent());
 			}
 		}
-
-		public void eliminarAsegurado(String busqueda) 
+	}
+		
+/*		public void eliminarAsegurado(String busqueda) 
 		throws ParserConfigurationException, TransformerConfigurationException, FileNotFoundException, TransformerException, IOException, SAXException, XPathExpressionException {
-//*			File file = new File(RUTA_ARCHIVO);
+			File file = new File(RUTA_ARCHIVO);
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder builder = factory.newDocumentBuilder();
 			Document document = builder.parse(file);
@@ -162,6 +170,9 @@ public class ManejadorArchivoxml {
 			transformer.transform(source, result);
 			outputStream.close();
 		}
+
+}
+*/
 /*
 
 			System.out.println("");
@@ -248,7 +259,7 @@ public class ManejadorArchivoxml {
 			}	
 		}
 
-	}
+	
 }
 
 */

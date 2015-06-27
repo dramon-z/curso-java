@@ -35,7 +35,7 @@ public class BD2 {
 	public Connection getConnection() throws SQLException {
 		Properties propiedades = new Properties();
 		propiedades.put("user", "root");
-		propiedades.put("password", "admin");
+		propiedades.put("password", "sinostea001pa");
 
 		return DriverManager.getConnection("jdbc:mysql://localhost:3306/asegurados", propiedades);
 	}

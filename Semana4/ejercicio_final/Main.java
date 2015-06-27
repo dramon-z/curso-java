@@ -47,7 +47,16 @@ public class Main {
 				}
 			break;
 			case 3:
-				System.out.print("Haz seleccionado la opción 3. Presione enter para continuar.");
+				System.out.print("Ingreso el nombre del asegurado que desea buscar: ");
+				String busqueda =  new Scanner(System.in).nextLine();
+
+				try {
+					ManejadorArchivo manejadorArchivo = new ManejadorArchivo();
+					manejadorArchivo.eliminarAsegurado(busqueda);
+				} catch (Exception e) {
+					e.printStackTrace();
+					System.exit(0);
+				}
 			break;
 			case 4:
 				System.out.print("¡Gracias por utilizar el sistema!");

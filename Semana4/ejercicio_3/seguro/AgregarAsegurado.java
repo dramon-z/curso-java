@@ -49,6 +49,7 @@ public class AgregarAsegurado {
 
 		if ("si".equals(esCorrecta)) {
 			ManejadorArchivo manejadorArchivo = new ManejadorArchivo();
+			manejadorArchivo.guardarAsegurado(nombreAsegurado, numeroSeguroSocial, edad, sexo, direccion);
 		} else {
 			ejecutarFormulario();
 		}
