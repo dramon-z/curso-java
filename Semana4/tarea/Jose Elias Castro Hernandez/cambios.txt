@@ -1,0 +1,4 @@
+1 - En la clase "Asegurado" cambie en "confirmarIngreso": equals por equalsIgnoreCase
+
+
+2 - creacion del metodo "evaluarIngreso" que se implementa en "confirmarIngreso" de la clase "Asegurado"

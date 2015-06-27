@@ -1,0 +1,90 @@
+<md-content id="mainTool">
+  <form>
+    <div layout layout-sm="column" class="ground">
+      <md-input-container flex>
+        <label>Peso (Kg)</label>
+        <input required type="number" min="1">
+      </md-input-container>
+      <md-input-container flex>
+        <label>Estatura (Mts)</label>
+        <input required type="number" min="1">
+      </md-input-container>
+      <md-input-container flex>
+        <label>Hemoglobina (g/dl)</label>
+        <input type="number" min="1">
+      </md-input-container>
+    </div>
+    <div layout layout-sm="column" class="ground">
+      <md-input-container flex>
+        <label>TA Sistólica/Distólica (mm/Hg)</label>
+        <input type="text">
+      </md-input-container>
+      <div class="radio">
+        <p>¿Tiene 8 horas que comió?</p><hr>
+        <md-radio-group>
+          <md-radio-button value="Si">Si</md-radio-button>
+          <md-radio-button value="No">No</md-radio-button>
+        </md-radio-group>
+      </div>
+      <md-input-container flex>
+        <label>Glucosa (mg/dl)</label>
+        <input type="number">
+      </md-input-container>
+    </div>
+    <div layout layout-sm="column" class="ground">
+      <md-input-container flex>
+        <label>Temperatura (°C)</label>
+        <input type="number">
+      </md-input-container>
+      <md-input-container flex>
+        <label>Frecuencia Cardiaca (x Min)</label>
+        <input required type="number" min="20" max="90">
+      </md-input-container>
+      <div class="radio">
+        <p>¿Está Embarazada?</p><hr>
+        <md-radio-group>
+          <md-radio-button value="Si">Si</md-radio-button>
+          <md-radio-button value="No">No</md-radio-button>
+        </md-radio-group>
+      </div>
+    </div>
+    <div layout layout-sm="column" class="ground">
+      <md-input-container flex>
+        <label>Frecuencia Respiratoria (x Min)</label>
+        <input required type="number">
+      </md-input-container>
+      <div class="radio">
+        <p>Condiciones Especiales</p><hr>
+        <md-checkbox aria-label="diabetes">Diabetes Millitus</md-checkbox>
+        <md-checkbox aria-label="hipertension">HTA Sistémica</md-checkbox>
+        <md-radio-group>
+          <md-radio-button value="tratamiento">Tb en tratamiento</md-radio-button>
+          <md-radio-button value="recuperado">Tb Recuperado</md-radio-button>
+        </md-radio-group>
+      </div>
+      <div class="radio">
+        <p>¿En lactancia?</p><hr>
+        <md-radio-group>
+          <md-radio-button value="Si">Si</md-radio-button>
+          <md-radio-button value="No">No</md-radio-button>
+        </md-radio-group>
+      </div>
+    </div>
+    <div layout layout-sm="column" class="ground">
+      <div class="radio">
+        <p>Sintomas</p><hr>
+        <div layout layout-sm="column">
+          <md-checkbox aria-label="fiebre">Fiebre</md-checkbox>
+          <md-checkbox aria-label="diarrea">Diarrea</md-checkbox>
+          <md-checkbox aria-label="tos">Tos</md-checkbox>
+          <md-checkbox aria-label="cefalea">Cefalea</md-checkbox>
+          <md-checkbox aria-label="exantema">Exantema</md-checkbox>
+          <md-checkbox aria-label="artralgia">Artralgía</md-checkbox>
+        </div>
+      </div>
+      <div class="radio" flex>
+        <lx-date-picker  model="datepicker.date" label="Pick a date" locale="es" flex></lx-date-picker>
+      </div>
+    </div>
+  </form>
+</md-content>

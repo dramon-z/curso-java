@@ -1,0 +1,90 @@
+md-input-container
+{
+  border-radius: 5px;
+  margin: 10px;
+  background-color: #ffffff;
+}
+
+.ground
+{
+  border-radius: 10px;
+  background-color: #2196F3;
+  margin: 10px;
+}
+
+#content
+{
+  height: calc(100% - 64px);
+}
+
+p, span
+{
+  color: #303F9F;
+  font-size: 14px;
+
+  /*
+  Indigo:#303F9F
+  Grey:#E0E0E0
+  */
+}
+hr
+{
+  width: 98%;
+}
+
+.radio
+{
+  padding-top: 15px !important;
+  font-size: 12px;
+  width: inherit;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 2px;
+  margin: 10px;
+}
+
+md-radio-button
+{
+  position: relative;
+  display: inline;
+}
+md-checkbox
+{
+  position: relative;
+  display: inline;
+}
+md-tooltip span
+{
+  font-size: 12px;
+  color: #ffffff !important;
+}
+#mainTool
+{
+  padding: 11px 50px;
+}
+lx-date-picker
+{
+  font-size: 16px;
+}
+
+.lx-date-picker__current-day-of-week{
+  background-color: #3F51B5;
+}
+
+.lx-date-picker__current-date, .lx-date-picker__day a:hover, .lx-date-picker__day--is-selected a{
+  background-color: #7986CB;
+}
+
+.lx-date-picker__current-date, .lx-date-picker__day a:hover, .lx-date-picker__day--is-selected a{
+  color: #ffffff !important;
+}
+
+.lx-date-picker__day--is-today a{
+  color: #3F51B5;
+}
+
+.btn--flat.btn--teal, .btn--icon.btn--teal{
+  color: #7986CB !important;
+}
