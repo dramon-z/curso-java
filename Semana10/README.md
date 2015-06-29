@@ -146,7 +146,59 @@ MainApp.java
 ![alt text][20]
 ![alt text][21]
 
+* Creamos un paquete llamado **mx.gob.tabasco.seguro.controllers** y dentro creamos una clase llamada **RootlayoutController** que contendra lo siguiente
 
+RootlayoutController.java
+```java
+package mx.gob.tabasco.seguro.controllers;
+
+import javafx.fxml.FXML;
+import mx.gob.tabasco.seguro.MainApp;
+
+public class RootlayoutController {
+
+
+    private MainApp mainApp;
+
+    public void setMainApp(MainApp mainApp) {
+        this.mainApp = mainApp;
+    }
+
+    @FXML
+    private void handleAbrirAsegurado() {
+        
+    }
+
+}
+```
+
+* En nuestro **MainApp** indicamos el controlador que va a utilizar nuestro **Rootlayout.fxml** para eso modificamos nuestro metodo **initRootLayout** y quedaria como sigue:
+
+MainApp.java
+```java
+...
+  public void initRootLayout() {
+        try {
+            // Load root layout from fxml file.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("views/Rootlayout.fxml"));
+            rootLayout = (BorderPane) loader.load();
+
+            // Show the scene containing the root layout.
+            Scene scene = new Scene(rootLayout);
+            primaryStage.setScene(scene);
+            
+            // Give the controller access to the main app.
+            RootlayoutController controller = loader.getController();
+            controller.setMainApp(this);
+            
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+ ...
+ ```
 
 [16]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/16.png
 [17]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/17.png
