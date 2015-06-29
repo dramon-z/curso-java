@@ -72,7 +72,48 @@ Hay que indicarle a Eclipse que use JDK 8 y también dónde se encuentra el ejec
 
 * Agregamos un Menu a nuestro **BorderPane** y salvamos
 
-![alt text][14]
+![alt text][15]
+
+##Agregando nuestro FXML a nuestra aplicacion
+
+```java
+ 	private Stage primaryStage;
+    private BorderPane rootLayout;
+
+    @Override
+    public void start(Stage primaryStage) {
+        this.primaryStage = primaryStage;
+        this.primaryStage.setTitle("Nuestro Tituto");
+
+        initRootLayout();
+
+        showPersonOverview();
+    }
+
+    public void initRootLayout() {
+        try {
+            // Load root layout from fxml file.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("views/Rootlayout.fxml"));
+            rootLayout = (BorderPane) loader.load();
+
+            // Show the scene containing the root layout.
+            Scene scene = new Scene(rootLayout);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public Stage getPrimaryStage() {
+        return primaryStage;
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+```
 
 [10]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/10.png
 [11]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/11.png
