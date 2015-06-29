@@ -15,14 +15,17 @@ Hay que indicarle a Eclipse que use JDK 8 y también dónde se encuentra el ejec
 ![alt text][3]
 
 5.	Navega hasta Java | JavaFX. Especifica la ruta al ejecutable del Scene Builder.
+![alt text][4]
 
 [1]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/1.png
 [2]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/2.png
 [3]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/3.png
+[4]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/4.png
 
 ##Contruyendo una Aplicacion con JavaFX
 
 1. En Eclipse, selecciona ***File > Others**
+![alt text][5]
 
 2. Seleccionamos JavaFx Project y damos next y le asignamos un nombre y damos finalizar.
 
@@ -34,6 +37,7 @@ Hay que indicarle a Eclipse que use JDK 8 y también dónde se encuentra el ejec
 
 6. Creamos un paquete ***mx.gob.tabasco.seguro.views**
 
+[5]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/5.png
 ##Crea el archivo FXML de diseño
 
 1. Haz clic derecho el paquete views y crea un nuevo archivo FXML (**New | Other | FXML | New FXML**, y seleccione que sea un ***BorderPane**
