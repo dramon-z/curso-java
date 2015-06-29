@@ -1,6 +1,17 @@
-Readme.md
+#Java Fx
 
-Reference-style: 
-![alt text][logo]
+##Configuración de Eclipse
 
-[logo]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/1.png
+Hay que indicarle a Eclipse que use JDK 8 y también dónde se encuentra el ejecutable del Scene Builder:
+
+1.	Abre las Preferencias de Eclipse (menú Window | Preferences y navega hasta Java | Installed JREs.
+
+2.	Si no lo tienes el jre1.8 en la lista de JREs, entonces pulsa Add..., selecciona Standard VM y elige el Directorio de instalación (JRE Home directory) de tu JDK 8.
+
+3.	Elimina otros JREs o JDKs de tal manera que JDK 8 se convierta en la opción por defecto.
+![alt text][2]
+
+
+
+[1]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/1.png
+[2]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/1.png
