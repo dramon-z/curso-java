@@ -14,7 +14,32 @@ Hay que indicarle a Eclipse que use JDK 8 y también dónde se encuentra el ejec
 4.	Navega a Java | Compiler. Establece el nivel de cumplimiento del ***compilador en 1.8** (Compiler compliance level).
 ![alt text][3]
 
+5.	Navega hasta Java | JavaFX. Especifica la ruta al ejecutable del Scene Builder.
 
 [1]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/1.png
 [2]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/2.png
 [3]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/3.png
+
+##Contruyendo una Aplicacion con JavaFX
+
+1. En Eclipse, selecciona ***File > Others**
+
+2. Seleccionamos JavaFx Project y damos next y le asignamos un nombre y damos finalizar.
+
+3. Borramos nuestro paquete application y creamos un nuevo paquete llamado ***mx.gob.tabasco.seguro**
+
+4. Creamos nuestro Main en ***New|Other|Javafx|classes|JavaFx Main Class**
+
+5. Colocamos el nombre de nuestro main y damos finalizar
+
+6. Creamos un paquete ***mx.gob.tabasco.seguro.views**
+
+##Crea el archivo FXML de diseño
+
+1. Haz clic derecho el paquete views y crea un nuevo archivo FXML (**New | Other | FXML | New FXML**, y seleccione que sea un ***BorderPane**
+
+2. Click derecho al archivo ***Rootlayout.fxml** Open with SceneBuilder
+
+3. Cambie las dimenciones del **BorderPane** con la propiedades de **Pref Width**
+
+4. Agregamos un Menu a nuestro **BorderPane** y salvamos
