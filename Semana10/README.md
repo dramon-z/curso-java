@@ -37,9 +37,11 @@ Hay que indicarle a Eclipse que use JDK 8 y también dónde se encuentra el ejec
 ![alt text][7]
 
 4. Creamos nuestro Main en **New|Other|Javafx|classes|JavaFx Main Class**
+
 ![alt text][8]
 
 5. Colocamos el nombre de nuestro main y damos finalizar
+
 ![alt text][9]
 
 6. Creamos un paquete **mx.gob.tabasco.seguro.views**
@@ -54,8 +56,27 @@ Hay que indicarle a Eclipse que use JDK 8 y también dónde se encuentra el ejec
 
 1. Haz clic derecho el paquete views y crea un nuevo archivo FXML (**New | Other | FXML | New FXML**, y seleccione que sea un **BorderPane**
 
+![alt text][10]
+
+![alt text][11]
+
 2. Click derecho al archivo **Rootlayout.fxml** Open with SceneBuilder
+
+![alt text][12]
 
 3. Cambie las dimenciones del **BorderPane** con la propiedades de **Pref Width**
 
+![alt text][13]
+
+![alt text][14]
+
 4. Agregamos un Menu a nuestro **BorderPane** y salvamos
+
+![alt text][14]
+
+[10]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/10.png
+[11]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/11.png
+[12]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/12.png
+[13]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/13.png
+[14]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/14.png
+[15]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/15.png
