@@ -146,11 +146,11 @@ MainApp.java
 ![alt text][20]
 ![alt text][21]
 
-* Creamos un paquete llamado **mx.gob.tabasco.seguro.controllers** y dentro creamos una clase llamada **RootlayoutController** que contendra lo siguiente
+* Dentro del paquete views creamos una clase llamada **RootlayoutController** que contendra lo siguiente
 
 RootlayoutController.java
 ```java
-package mx.gob.tabasco.seguro.controllers;
+package mx.gob.tabasco.seguro.views;
 
 import javafx.fxml.FXML;
 import mx.gob.tabasco.seguro.MainApp;
@@ -200,9 +200,20 @@ MainApp.java
  ...
  ```
 
+ * Abrimos el Archivo **Rootlayout.fxml** con el SceneBuilder y en el apartado de **Cotroller** le asignamos el controlador
+ **RootlayoutController**
+
+![alt text][22]
+
+* En **hierarchy|BorderPane|Menu|** Cambiamos el nombre de edit por **Asegurado** y anexamos en el submenu **Agregar** y **Eliminar** y en el apartado **Code|Main|On Action** asignamos el metodo **handleAbrirAsegurado**
+
+![alt text][23]
+
 [16]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/16.png
 [17]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/17.png
 [18]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/18.png
 [19]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/19.png
 [20]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/20.png
 [21]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/21.png
+[22]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/22.png
+[23]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/23.png
