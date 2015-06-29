@@ -205,7 +205,7 @@ MainApp.java
 
 ![alt text][22]
 
-* En **hierarchy|BorderPane|Menu|** Cambiamos el nombre de edit por **Asegurado** y anexamos en el submenu **Agregar** y **Eliminar** y en el apartado **Code|Main|On Action** asignamos el metodo **handleAbrirAsegurado**
+* En **hierarchy|BorderPane|Menu|** Cambiamos el nombre de edit por **Asegurado** y anexamos en el submenu **Abrir|Agregar** y **Eliminar** y seleccionamos **Abrir** y en el apartado **Code|Main|On Action** asignamos el metodo **handleAbrirAsegurado**
 
 ![alt text][23]
 
