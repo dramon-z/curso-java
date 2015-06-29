@@ -76,6 +76,9 @@ Hay que indicarle a Eclipse que use JDK 8 y también dónde se encuentra el ejec
 
 ##Agregando nuestro FXML a nuestra aplicacion
 
+* En nuestra clase agregamos lo siguiente
+
+MainApp.java
 ```java
  	private Stage primaryStage;
     private BorderPane rootLayout;
