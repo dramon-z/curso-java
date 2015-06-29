@@ -135,7 +135,16 @@ MainApp.java
 
 ![alt text][17]
 
+* Agregamos un Gridpanel y colocamos label con los datos de asegurado
+
+![alt text][18]
+
+![alt text][19]
+
+
 
 
 [16]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/16.png
 [17]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/17.png
+[18]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/18.png
+[19]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/19.png
