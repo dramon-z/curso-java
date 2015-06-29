@@ -124,3 +124,18 @@ MainApp.java
 [13]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/13.png
 [14]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/14.png
 [15]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/15.png
+
+##Agregando Nuestro Catalogo de Asegurados
+
+* Creamos nuestro FXML de asegurado en este caso seleccionamos **AnchorPane** y lo nombramos **AseguradoOverview**
+
+![alt text][16]
+
+* Damos click derecho a **AseguradoOverview.fxml** y lo abrimos con el **Scene Builder** y agustamos nuestro layout
+
+![alt text][17]
+
+
+
+[16]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/16.png
+[17]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/17.png
