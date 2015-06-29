@@ -4,17 +4,17 @@
 
 Hay que indicarle a Eclipse que use JDK 8 y también dónde se encuentra el ejecutable del Scene Builder:
 
-1.	Abre las Preferencias de Eclipse (menú Window | Preferences y navega hasta Java | Installed JREs.
+* Abre las Preferencias de Eclipse (menú Window | Preferences y navega hasta Java | Installed JREs.
 
-2.	Si no lo tienes el jre1.8 en la lista de JREs, entonces pulsa Add..., selecciona Standard VM y elige el Directorio de instalación (JRE Home directory) de tu JDK 8.
+* Si no lo tienes el jre1.8 en la lista de JREs, entonces pulsa Add..., selecciona Standard VM y elige el Directorio de instalación (JRE Home directory) de tu JDK 8.
 
-3.	Elimina otros JREs o JDKs de tal manera que **JDK 8 se convierta en la opción por defecto.**
+* Elimina otros JREs o JDKs de tal manera que **JDK 8 se convierta en la opción por defecto.**
 ![alt text][2]
 
-4.	Navega a Java | Compiler. Establece el nivel de cumplimiento del **compilador en 1.8** (Compiler compliance level).
+* Navega a Java | Compiler. Establece el nivel de cumplimiento del **compilador en 1.8** (Compiler compliance level).
 ![alt text][3]
 
-5.	Navega hasta Java | JavaFX. Especifica la ruta al ejecutable del Scene Builder.
+* Navega hasta Java | JavaFX. Especifica la ruta al ejecutable del Scene Builder.
 ![alt text][4]
 
 [1]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/1.png
@@ -24,27 +24,27 @@ Hay que indicarle a Eclipse que use JDK 8 y también dónde se encuentra el ejec
 
 ##Contruyendo una Aplicacion con JavaFX
 
-1. En Eclipse, selecciona **File > Others**
+* En Eclipse, selecciona **File > Others**
 
 ![alt text][5]
 
-2. Seleccionamos JavaFx Project y damos next y le asignamos un nombre y damos finalizar.
+* Seleccionamos JavaFx Project y damos next y le asignamos un nombre y damos finalizar.
 
 ![alt text][6]
 
-3. Borramos nuestro paquete application y creamos un nuevo paquete llamado **mx.gob.tabasco.seguro**
+* Borramos nuestro paquete application y creamos un nuevo paquete llamado **mx.gob.tabasco.seguro**
 
 ![alt text][7]
 
-4. Creamos nuestro Main en **New|Other|Javafx|classes|JavaFx Main Class**
+* Creamos nuestro Main en **New|Other|Javafx|classes|JavaFx Main Class**
 
 ![alt text][8]
 
-5. Colocamos el nombre de nuestro main y damos finalizar
+* Colocamos el nombre de nuestro main y damos finalizar
 
 ![alt text][9]
 
-6. Creamos un paquete **mx.gob.tabasco.seguro.views**
+* Creamos un paquete **mx.gob.tabasco.seguro.views**
 
 [5]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/5.png
 [6]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/6.png
@@ -54,23 +54,23 @@ Hay que indicarle a Eclipse que use JDK 8 y también dónde se encuentra el ejec
 
 ##Crea el archivo FXML de diseño
 
-1. Haz clic derecho el paquete views y crea un nuevo archivo FXML (**New | Other | FXML | New FXML**, y seleccione que sea un **BorderPane**
+* Haz clic derecho el paquete views y crea un nuevo archivo FXML (**New | Other | FXML | New FXML**, y seleccione que sea un **BorderPane**
 
 ![alt text][10]
 
 ![alt text][11]
 
-2. Click derecho al archivo **Rootlayout.fxml** Open with SceneBuilder
+* Click derecho al archivo **Rootlayout.fxml** Open with SceneBuilder
 
 ![alt text][12]
 
-3. Cambie las dimenciones del **BorderPane** con la propiedades de **Pref Width**
+* Cambie las dimenciones del **BorderPane** con la propiedades de **Pref Width**
 
 ![alt text][13]
 
 ![alt text][14]
 
-4. Agregamos un Menu a nuestro **BorderPane** y salvamos
+* Agregamos un Menu a nuestro **BorderPane** y salvamos
 
 ![alt text][14]
 
