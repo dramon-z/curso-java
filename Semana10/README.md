@@ -24,7 +24,8 @@ Hay que indicarle a Eclipse que use JDK 8 y también dónde se encuentra el ejec
 
 ##Contruyendo una Aplicacion con JavaFX
 
-1. En Eclipse, selecciona ***File > Others**
+1. En Eclipse, selecciona **File > Others**
+
 ![alt text][5]
 
 2. Seleccionamos JavaFx Project y damos next y le asignamos un nombre y damos finalizar.
