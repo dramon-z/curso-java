@@ -1,5 +1,9 @@
 #Java Fx
 
+##Tutorial recomendado
+
+![alt text] http://code.makery.ch/library/javafx-8-tutorial/es/
+
 ##Configuración de Eclipse
 
 Hay que indicarle a Eclipse que use JDK 8 y también dónde se encuentra el ejecutable del Scene Builder:
@@ -770,6 +774,28 @@ MainApp.java
             e.printStackTrace();
             return false;
         }
+    }
+...
+```
+
+* Agregamos una pequeña restriccion en el textfield de edad para que solo nos tome numeros en el campo agregamos el siguiente codigo en el inicialize en AseguradoFormOverviewController
+
+AseguradoFormOverviewController.java
+```java
+...
+    @FXML
+    private void initialize(){
+        ...
+        edadField.addEventFilter(KeyEvent.KEY_TYPED, new EventHandler<KeyEvent>() {
+            public void handle( KeyEvent t ) {
+                char ar[] = t.getCharacter().toCharArray();
+                char ch = ar[t.getCharacter().toCharArray().length - 1];
+                if (!(ch >= '0' && ch <= '9')) {                   
+                   t.consume();
+                }
+            }
+         });
+        ...
     }
 ...
 ```
