@@ -535,3 +535,99 @@ AseguradoOverviewController.java
 
 
 [25]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/25.png
+
+## Ajustando nuestra tabla y eventos de seleccion de la tabla
+
+* Creamos las siguientes variables en nuestra clase AseguradoOverviewController
+
+AseguradoOverviewController.java
+```java
+...
+    @FXML
+    private Label nombreLabel;
+    @FXML
+    private Label apellidosLabel;
+    @FXML
+    private Label edadLabel;
+    @FXML
+    private Label sexoLabel;
+    @FXML
+    private Label numeroSeguroLabel;
+...
+```
+
+* Agregamos las variables a los ids a sus correspondientes label en **AseguradoOverview**
+
+![alt text][26]
+
+* Creamos el metodo **handleLabelSeletcAsegurado** en AseguradoOverviewController que asignara los valores a nuestro label
+
+AseguradoOverviewController.java
+```java
+...
+    private void handleLabelSeletcAsegurado(){
+        Asegurado asegurado = aseguradoTable.getSelectionModel().getSelectedItem();
+        nombreLabel.setText(asegurado.getNombre());
+        apellidosLabel.setText(asegurado.getApellido());
+        edadLabel.setText(Integer.toString(asegurado.getEdad()));
+        sexoLabel.setText(asegurado.getSexo());
+        numeroSeguroLabel.setText(asegurado.getNumeroSeguroSocial());
+    }
+...
+```
+
+* En  AseguradoOverviewController el metodo **loadTablaAsegurado** agregar la siguiente linea
+
+AseguradoOverviewController.java
+```java
+...
+private void loadTablaAsegurado(){
+       ...
+        aseguradoTable.setOnMousePressed(new EventHandler<MouseEvent>() {
+            @Override 
+            public void handle(MouseEvent event) {
+                if (event.isPrimaryButtonDown() && event.getClickCount() == 1) {
+                    handleLabelSeletcAsegurado();                   
+                }
+            }
+        });
+        ...
+    }
+...
+```
+
+* Para complementar en  AseguradoOverviewController el metodo **loadTablaAsegurado** ajustamos la columna de sexo para que nos muestre la informacion completa de la siguiente manera
+
+AseguradoOverviewController.java
+```java
+...
+    private void loadTablaAsegurado(){
+        ...
+        sexoColumn.setCellFactory(new Callback<TableColumn<Asegurado,String>, TableCell<Asegurado,String>>() {
+            @Override
+            public TableCell<Asegurado, String> call( TableColumn<Asegurado, String> param) {
+                final TableCell<Asegurado, String> cell = new TableCell<Asegurado, String>() {
+                    private Text text;
+                    @Override
+                    public void updateItem(String item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (!isEmpty()) {
+                            if(item.toString().trim().equals("M")){
+                                text = new Text("Masculino");
+                            }else{
+                                text = new Text("Femenino");
+                            }
+                            setGraphic(text);
+                        }
+                    }
+                };
+                return cell;
+            }
+        });
+        ...
+    }
+...
+```
+
+
+[26]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/26.png
