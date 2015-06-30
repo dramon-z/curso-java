@@ -274,6 +274,34 @@ MainApp.java
 
 ## Llenar nuestra tabla de asegurados desde un webservice
 
+* En raiz del proyecto agregamos la carpeta lib y colocamos las librerias que se encuentran en el git en **curso-java/Semana10/lib**
 
+* En **AseguradoOverviewController** deblaramos las siguientes variables
 
+AseguradoOverviewController.java
+```java
+...
+    private static final String REST_SERVICE_URL = "http://localhost:8080/MiProyecto/api";
+    
+    @FXML
+    private TableView<Asegurado> aseguradoTable;
+    @FXML
+    private TableColumn<Asegurado, String> nombreColumn;
+    @FXML
+    private TableColumn<Asegurado, String> apellidosColumn;
+    @FXML
+    private TableColumn<Asegurado, Number> edadColumn;
+    @FXML
+    private TableColumn<Asegurado, String> sexoColumn;
+    @FXML
+    private TableColumn<Asegurado, String> numeroSeguroColumn;
+    
+    private ObservableList<Asegurado> licitacionData = FXCollections.observableArrayList();
+...
+```
 
+* Ahora abrimos el **AseguradoOverview.fxml** y asignamos las variables a nuestra tabla y columnas
+
+![alt text][24]
+
+[24]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/24.png
