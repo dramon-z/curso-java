@@ -734,7 +734,7 @@ RootlayoutController.java
 ...
 ```
 
-![alt text][27]
+![alt text][28]
 
 * En MainApp agregamos el metodo que nos mostrara la ventana para agregar nuestro asegurado
 
