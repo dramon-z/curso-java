@@ -209,6 +209,59 @@ MainApp.java
 
 ![alt text][23]
 
+
+* Creamos la siguiente clase en views y la llamaremos **AseguradoOverviewController**
+
+AseguradoOverviewController.java
+```java
+package mx.gob.tabasco.seguro.views;
+
+import javafx.fxml.FXML;
+import mx.gob.tabasco.seguro.MainApp;
+
+public class AseguradoOverviewController {
+    
+    private MainApp mainApp;
+    
+    public AseguradoOverviewController() {
+        
+    }
+    @FXML
+    private void initialize() {
+        
+    }
+    
+    public void setMainApp(MainApp mainApp) {
+        this.mainApp = mainApp;
+    }
+
+}
+```
+
+* Vamos a nuestro **MainApp** en **showAsegurado()** y en el **AseguradoOverview.fxml** asigamos nuestro controlador
+
+MainApp.java
+```java
+...
+ public void showAsegurado(){
+         try {
+             FXMLLoader loader = new FXMLLoader();
+             loader.setLocation(MainApp.class.getResource("views/AseguradoOverview.fxml"));
+             AnchorPane personOverview = (AnchorPane) loader.load();
+             
+             AseguradoOverviewController controller = loader.getController();
+             controller.setMainApp(this);
+             
+             rootLayout.setCenter(personOverview);
+         } catch (IOException e) {
+             e.printStackTrace();
+         }
+        
+    }
+...
+```
+![alt text][224]
+
 [16]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/16.png
 [17]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/17.png
 [18]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/18.png
@@ -217,3 +270,4 @@ MainApp.java
 [21]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/21.png
 [22]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/22.png
 [23]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/23.png
+[24]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/24.png
