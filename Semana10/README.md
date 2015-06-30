@@ -95,6 +95,9 @@ MainApp.java
  	private Stage primaryStage;
     private BorderPane rootLayout;
 
+    private ObservableList<Asegurado> aseguradoData = FXCollections.observableArrayList();
+
+
     @Override
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
@@ -127,6 +130,9 @@ MainApp.java
 
     public static void main(String[] args) {
         launch(args);
+    }
+    public ObservableList<Asegurado> getAsegurdosData(){
+        return aseguradoData;
     }
 ```
 
@@ -270,6 +276,8 @@ MainApp.java
          }
         
     }
+
+
 ...
 ```
 ![alt text][24]
@@ -293,8 +301,7 @@ MainApp.java
 AseguradoOverviewController.java
 ```java
 ...
-    private static final String REST_SERVICE_URL = "http://localhost:8080/MiProyecto/api";
-    
+ 
     @FXML
     private TableView<Asegurado> aseguradoTable;
     @FXML
@@ -306,9 +313,8 @@ AseguradoOverviewController.java
     @FXML
     private TableColumn<Asegurado, String> sexoColumn;
     @FXML
-    private TableColumn<Asegurado, String> numeroSeguroColumn;
-    
-    private ObservableList<Asegurado> licitacionData = FXCollections.observableArrayList();
+    private TableColumn<Asegurado, String> numeroSeguroColumn;    
+ 
 ...
 ```
 
@@ -495,13 +501,42 @@ public class AseguradoMessageBodyReader implements MessageBodyReader<List<Asegur
 
 ```
 
-* Creamos dos metodos **loadAsegurados** y **loadTablaAsegurado**, loadAseguradosnos buscara todos los asegurados mediante un webservice y loadTablaAsegurado los cargara en nuestra tabla
+* Creamos el paquete utils **mx.gob.tabasco.seguro.util** y creamos una clase llamada **AseguradoWebService**
 
-AseguradoOverviewController.java
+AseguradoWebService.java
 ```java
-...
-    public void loadAsegurados(){
-   
+package mx.gob.tabasco.seguro.util;
+
+import java.util.List;
+
+import javafx.collections.ObservableList;
+
+import javax.json.stream.JsonGenerator;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.core.GenericType;
+
+import mx.gob.tabasco.seguro.model.Asegurado;
+import mx.gob.tabasco.seguro.model.AseguradoMessageBodyReader;
+
+import org.controlsfx.dialog.Dialogs;
+import org.glassfish.jersey.jsonp.JsonProcessingFeature;
+
+public class AseguradoWebService {
+    
+    private static final String REST_SERVICE_URL = "http://localhost:8080/MiProyecto/api";
+    
+    public void loadAsegurados(ObservableList<Asegurado> aseguradoData){
+        /**Client client = ClientBuilder.newBuilder().register(JsonProcessingFeature.class)
+                    .property(JsonGenerator.PRETTY_PRINTING, true).build();
+        WebTarget path = client.target(REST_SERVICE_URL);
+        JsonArray data = path.request().get(JsonArray.class);       
+        int arrSize = data.size();
+        for (int i = 0; i < arrSize; ++i) {
+            JsonObject o = data.getJsonObject(i);
+            System.out.println(o.get("nombre"));
+        }**/
+        
         try {
             Client client = ClientBuilder.newBuilder().register(JsonProcessingFeature.class)
                     .property(JsonGenerator.PRETTY_PRINTING, true).build();
@@ -511,7 +546,7 @@ AseguradoOverviewController.java
             
             
             for(Asegurado a:asegurados){
-                licitacionData.add(a);          
+                aseguradoData.add(a);           
             }
         } catch (Exception e) {
             Dialogs.create()
@@ -520,9 +555,17 @@ AseguradoOverviewController.java
             .showException(e);
         }       
     }
-    
+}
+```
+
+* Creamos el metodo y **loadTablaAsegurado**
+
+AseguradoOverviewController.java
+```java
+...
+
     private void loadTablaAsegurado(){
-        aseguradoTable.setItems(licitacionData);
+        aseguradoTable.setItems(aseguradoData);
         nombreColumn.setCellValueFactory(cellData -> cellData.getValue().nombreProperty());
         apellidosColumn.setCellValueFactory(cellData -> cellData.getValue().apellidoProperty());
         edadColumn.setCellValueFactory(cellData -> cellData.getValue().edadProperty());
@@ -532,14 +575,19 @@ AseguradoOverviewController.java
 ...
 ```
 
-* Para completar este apartado agregamos el llamado loadAsegurados y loadTablaAsegurado en nuestro metodo  **initialize** dentro de **AseguradoOverviewController.java**
+* Ahora agregamos las variable **private ObservableList<Asegurado> aseguradoData;** y en el metodo setMainApp agregamos nuestro inicializadores de seguro y nuestra tabla
 
 AseguradoOverviewController.java
 ```java
 ...
-    @FXML
-    private void initialize(){
-        loadAsegurados();
+    private ObservableList<Asegurado> aseguradoData;
+...
+    public void setMainApp(MainApp mainApp) {
+        this.mainApp = mainApp;
+        aseguradoData = mainApp.getAsegurdosData();
+        
+        AseguradoWebService ws = new AseguradoWebService();
+        ws.loadAsegurados(aseguradoData);
         loadTablaAsegurado();
     }
 ...
@@ -684,6 +732,9 @@ public class AseguradoFormOverviewController {
     private Asegurado asegurado;
     private boolean okClicked = false;
 
+    private MainApp mainApp;
+    private ObservableList<Asegurado> aseguradoData; 
+
     @FXML
     private void initialize(){
         sexoComboBox.setItems(FXCollections.observableArrayList(
@@ -708,7 +759,18 @@ public class AseguradoFormOverviewController {
     private boolean isInputValid() {
         String errorMessage = "";
         
-        
+         if (nombreField.getText() == null || nombreField.getText().length() == 0) {
+                errorMessage += "El nombre es un valor requerido!\n"; 
+            }
+         if (apellidosField.getText() == null || apellidosField.getText().length() == 0) {
+                errorMessage += "Los apellido son valores requerido!\n"; 
+            }
+         if (edadField.getText() == null || edadField.getText().length() == 0) {
+                errorMessage += "La edad es un valor requerido!\n"; 
+            }
+         if (numeroSeguroField.getText() == null || numeroSeguroField.getText().length() == 0) {
+                errorMessage += "El numero de seguro social es un valor requerido!\n"; 
+            }
         
         if (errorMessage.length() == 0) {
             return true;
@@ -728,6 +790,11 @@ public class AseguradoFormOverviewController {
     }
     public boolean isOkClicked(){       
         return okClicked;
+    }
+
+    public void setMainApp(MainApp mainApp) {
+        this.mainApp = mainApp;
+        aseguradoData = mainApp.getAsegurdosData();
     }
     
 }
@@ -772,6 +839,7 @@ MainApp.java
             
             AseguradoFormOverviewController controller = loader.getController();
             controller.setDialogStage(dialogStage);
+            controller.setMainApp(this);
 
             // Show the dialog and wait until the user closes it
             dialogStage.showAndWait();
@@ -804,6 +872,75 @@ AseguradoFormOverviewController.java
             }
          });
         ...
+    }
+...
+```
+
+* Es hora de darle la funcionalidad de guardado a nuestro boton para ello creamos una instancia de asegurado si no esta inicializado en nuestra clase **AseguradoFormOverviewController** en el metodo **handleOk** y asignamos los valores de nuestros campos e instanciamos **AseguradoWebService** y le enviamos nuestro asegurado y aseguradoData
+
+AseguradoFormOverviewController.java
+```java
+...
+    @FXML
+    public void handleOK(){
+        if(isInputValid()){
+            if(asegurado == null){
+                asegurado = new Asegurado();
+            }
+            asegurado.setNombre(nombreField.getText());
+            asegurado.setApellido(apellidosField.getText());
+            asegurado.setEdad(Integer.parseInt(edadField.getText()));
+            asegurado.setNumeroSeguroSocial(numeroSeguroField.getText());
+            asegurado.setSexo(sexoComboBox.getValue()=="Masculino"?"M":"F");
+            AseguradoWebService ws = new AseguradoWebService();
+                        
+            okClicked = ws.guardarAsegurado(asegurado,aseguradoData);
+            if(okClicked){
+                Dialogs.create()
+                .title("Aviso")
+                .masthead("El asegurado se guardo de forma correcta.")
+                .message("Se registro con el id :"+asegurado.getId())
+                .showInformation();
+                dialogStage.close();
+            }
+            
+        }       
+    }
+...
+```
+
+* En **AseguradoWebService.java** agregamos el metodo de guardarAsegurado y asignamos los parametros de nuestro asegurado para enviarlos al webservice
+
+AseguradoWebService.java
+```java
+...
+    public boolean guardarAsegurado(Asegurado asegurado,ObservableList<Asegurado> aseguradoData){
+        try {
+            Client client = ClientBuilder.newBuilder().register(JsonProcessingFeature.class)
+                    .property(JsonGenerator.PRETTY_PRINTING, true).build();
+            client.register(AseguradoMessageBodyReader.class);
+            Form form = new Form();
+            form.param("nombre",asegurado.getNombre());
+            form.param("apellido", asegurado.getApellido());
+            form.param("sexo", asegurado.getSexo());
+            form.param("edad", Integer.toString(asegurado.getEdad()));
+            form.param("numeroSeguroSocial", asegurado.getNumeroSeguroSocial());
+
+            JsonObject aseguradoResult = client
+                    .target(REST_SERVICE_URL).path("/asegurados/guardar")
+                    .request("application/json")
+                    .post(Entity.entity(form,MediaType.APPLICATION_FORM_URLENCODED_TYPE),JsonObject.class);
+            asegurado.setId(Integer.parseInt(aseguradoResult.get("id").toString()));
+            aseguradoData.add(asegurado);
+            return true;
+        } catch (Exception e) {
+            Dialogs.create()
+            .title("Error")
+            .masthead("No se pudo cargar los asegurados de forma remota")
+            .showException(e);
+            return false;
+        }   
+        
     }
 ...
 ```
