@@ -247,12 +247,12 @@ MainApp.java
          try {
              FXMLLoader loader = new FXMLLoader();
              loader.setLocation(MainApp.class.getResource("views/AseguradoOverview.fxml"));
-             AnchorPane personOverview = (AnchorPane) loader.load();
+             AnchorPane aseguradoOverview = (AnchorPane) loader.load();
              
              AseguradoOverviewController controller = loader.getController();
              controller.setMainApp(this);
              
-             rootLayout.setCenter(personOverview);
+             rootLayout.setCenter(aseguradoOverview);
          } catch (IOException e) {
              e.printStackTrace();
          }
@@ -631,3 +631,148 @@ AseguradoOverviewController.java
 
 
 [26]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/26.png
+
+## Agregando un asegurado
+
+* Creamos un nuevo archivo fxml con el nombre de **AseguradoFormOverview.fxml** y agregamos los campos de asegurados en un **Gridpanel**, anexamos **TexlField** para los campos de input de texto, **ComboBox** para el sexo y dos botones uno para **Guardar** y otro para **Cancelar**
+
+![alt text][27]
+
+* Creamos una clase en views llamada **AseguradoFormOverviewController** que contendra las variables de nuestros textfield y metodos de nuestra ventana de guardado
+
+AseguradoFormOverviewController.java
+```java
+package mx.gob.tabasco.seguro.views;
+
+
+import mx.gob.tabasco.seguro.model.Asegurado;
+
+import org.controlsfx.dialog.Dialogs;
+
+import javafx.collections.FXCollections;
+import javafx.fxml.FXML;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+
+public class AseguradoFormOverviewController {
+    
+    @FXML
+    private TextField nombreField;
+    @FXML
+    private TextField apellidosField;
+    @FXML
+    private TextField edadField;
+    @FXML
+    private ComboBox<String> sexoComboBox;
+    @FXML
+    private TextField numeroSeguroField;
+    
+    private Stage dialogStage;
+    private Asegurado asegurado;
+    private boolean okClicked = false;
+
+    @FXML
+    private void initialize(){
+        sexoComboBox.setItems(FXCollections.observableArrayList(
+                "Femenino",
+                "Masculino"
+            ));
+        sexoComboBox.getSelectionModel().select(0);             
+    }
+    @FXML
+    public void handleOK(){
+        if(isInputValid()){
+            okClicked = true;           
+            dialogStage.close();
+        }       
+    }
+    
+    @FXML
+    private void handleCancel() {
+        dialogStage.close();
+    }
+    
+    private boolean isInputValid() {
+        String errorMessage = "";
+        
+        
+        
+        if (errorMessage.length() == 0) {
+            return true;
+        } else {
+            // Show the error message.
+            Dialogs.create()
+                .title("Campos Invalidos")
+                .masthead("Porfavor corrija los campos invalidos")
+                .message(errorMessage)
+                .showError();
+            return false;
+        }
+    }
+    
+    public void setDialogStage(Stage dialogStage){
+        this.dialogStage = dialogStage;
+    }
+    public boolean isOkClicked(){       
+        return okClicked;
+    }
+    
+}
+```
+
+* Ahora en nuestra clase **RootlayoutController** agregamos el metodo **handleAgregarAsegurado** y lo asignamos en Rootlayout.fxml en el menu **Asegurado|Agregar** en **on Action**
+
+
+RootlayoutController.java
+```java
+...    
+    @FXML
+    private void handleAgregarAsegurado() {
+        boolean ok = mainApp.showFormAsegurado();        
+    }
+...
+```
+
+![alt text][27]
+
+* En MainApp agregamos el metodo que nos mostrara la ventana para agregar nuestro asegurado
+
+MainApp.java
+```java
+...
+  public boolean showFormAsegurado(){
+        try {
+            
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("views/AseguradoFormOverview.fxml"));
+            AnchorPane aseguradoFormOverview = (AnchorPane) loader.load();
+            
+            // Create the dialog Stage.
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Asegurado");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(aseguradoFormOverview);
+            dialogStage.setScene(scene);
+
+            // Set the person into the controller.
+            
+            AseguradoFormOverviewController controller = loader.getController();
+            controller.setDialogStage(dialogStage);
+
+            // Show the dialog and wait until the user closes it
+            dialogStage.showAndWait();
+
+            return controller.isOkClicked();
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+...
+```
+
+[27]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/27.png
+[28]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/28.png
