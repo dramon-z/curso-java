@@ -1,8 +1,16 @@
 #Java Fx
 
-##Tutorial recomendado
+##Link recomendados
 
-![alt text] http://code.makery.ch/library/javafx-8-tutorial/es/
+ http://code.makery.ch/library/javafx-8-tutorial/es/
+
+ http://docs.oracle.com/javafx/scenebuilder/1/user_guide/startup-window.htm
+
+ http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/javafx_con_javaee_tutorial/javafx_javaee7.html
+
+ http://docs.oracle.com/javase/8/javase-clienttechnologies.htm
+
+ http://www.hascode.com/2013/12/jax-rs-2-0-rest-client-features-by-example/
 
 ##Configuración de Eclipse
 
