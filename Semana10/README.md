@@ -260,7 +260,7 @@ MainApp.java
     }
 ...
 ```
-![alt text][224]
+![alt text][24]
 
 [16]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/16.png
 [17]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/17.png
@@ -271,3 +271,9 @@ MainApp.java
 [22]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/22.png
 [23]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/23.png
 [24]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/24.png
+
+## Llenar nuestra tabla de asegurados desde un webservice
+
+
+
+
