@@ -4,6 +4,8 @@
 
  http://code.makery.ch/library/javafx-8-tutorial/es/
 
+ http://docs.oracle.com/javafx/2/ui_controls/jfxpub-ui_controls.htm
+
  http://docs.oracle.com/javafx/scenebuilder/1/user_guide/startup-window.htm
 
  http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/javafx_con_javaee_tutorial/javafx_javaee7.html
