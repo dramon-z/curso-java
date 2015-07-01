@@ -544,7 +544,7 @@ public class AseguradoWebService {
             GenericType<List<Asegurado>> aseguradoType = new GenericType<List<Asegurado>>() {};
             List<Asegurado> asegurados= client.target(REST_SERVICE_URL).path("/asegurados").request("application/json").get(aseguradoType);
             
-            
+            aseguradoData.clear();
             for(Asegurado a:asegurados){
                 aseguradoData.add(a);           
             }
@@ -677,6 +677,9 @@ AseguradoOverviewController.java
                             }else{
                                 text = new Text("Femenino");
                             }
+                            setGraphic(text);
+                        }else{
+                            text = new Text("");
                             setGraphic(text);
                         }
                     }
@@ -947,3 +950,210 @@ AseguradoWebService.java
 
 [27]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/27.png
 [28]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/28.png
+
+##Eliminar un asegurado
+
+* En **AseguradoOverviewController** agregamos el metodo de **handleEliminar**, en el cual preguntaremos si existe un asegurado seleccionado y luego preguntamos una confirmacion, de ser afirmada la solicitud instaciamos **AseguradoWebService** y mandamos a llamar el metodo de **eliminarAsegurado** al ser exitosa la eliminacion eliminamos los registros de la tabla y de aseguradoData
+
+
+AseguradoOverviewController.java
+```java
+...
+    @FXML
+    private void handleEliminar(){
+        Asegurado asegurado = aseguradoTable.getSelectionModel().getSelectedItem();
+        if(asegurado!=null){
+            Action response = Dialogs.create()           
+                    .title("Eliminar Asegurado")
+                    .masthead("Se procedera a eliminar el assegurado"+asegurado.getNombre()+" "+asegurado.getApellido()+" con el No. de Seguro "+asegurado.getNumeroSeguroSocial()+" seleccionado.")
+                    .message("¿Deseas continuar?")
+                    .showConfirm();
+
+            if (response == Dialog.Actions.YES) {
+                
+                AseguradoWebService ws = new AseguradoWebService();
+                boolean ok = ws.eliminarAsegurado(asegurado);
+                if(ok){
+                    aseguradoTable.getItems().remove(aseguradoTable.getSelectionModel().getSelectedIndex());                   
+                    
+                    aseguradoData.remove(asegurado);
+                    Dialogs.create()
+                    .title("Aviso")
+                    .masthead("Se elimino de forma correcta.")
+                    .message("")
+                    .showInformation();
+                }
+                
+            } 
+        }else{
+            Dialogs.create()
+            .title("Aviso")
+            .masthead("No existe asegurado seleccionado.")
+            .message("Porfavor seleccione un asegurado.")
+            .showWarning();
+        }
+    }
+...
+```
+
+* En **AseguradoWebService** agregamos el metodo **eliminarAsegurado** lo cual ara la conexion a nuestro web service para eliminar nuestro registro
+
+AseguradoWebService.java
+```java
+...
+    public boolean eliminarAsegurado(Asegurado asegurado){
+        try {
+            Client client = ClientBuilder.newBuilder().register(JsonProcessingFeature.class)
+                    .property(JsonGenerator.PRETTY_PRINTING, true).build();
+            client.register(AseguradoMessageBodyReader.class);
+            
+            JsonObject aseguradoResult = client.target(REST_SERVICE_URL).path("/asegurados/eliminar/{id}")
+            .resolveTemplate("id", asegurado.getId()).request("application/json").delete(JsonObject.class);
+            System.out.println(aseguradoResult.get("success"));
+            return aseguradoResult.get("success").toString().equals("true")?true:false;
+        } catch (Exception e) {
+            Dialogs.create()
+            .title("Error")
+            .masthead("No se pudo cargar los asegurados de forma remota")
+            .showException(e);
+            return false;
+        }   
+        
+    }
+...
+```
+
+* Abrimos el SceneBuilder nuestro archivo **AseguradoOverview.fxml** y agregamos el buton de eliminar y asingamos en **on Action|handleEliminar** 
+
+![alt text][29]
+
+[29]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/29.png
+
+
+## Editar asegurado
+
+* En **AseguradoOverviewController** agregamos nuestro metodo **handleEditar** el cual preguntara si existe algun asegurado seleccionado antes de abrir nuestra ventanda de edicion
+
+AseguradoOverviewController.java
+```java
+...
+    @FXML
+    private void handleEditar(){
+        Asegurado asegurado = aseguradoTable.getSelectionModel().getSelectedItem();
+        if(asegurado!=null){
+            boolean ok = mainApp.showFormEditarAsegurado(asegurado);            
+        }else{
+            Dialogs.create()
+            .title("Aviso")
+            .masthead("No existe asegurado seleccionado.")
+            .message("Porfavor seleccione un asegurado.")
+            .showWarning();
+        }
+    }
+...
+```
+
+* Agregamos en **MainApp** el metodo **showFormEditarAsegurado** el cual nos abrira la ventana de edicion de asegurados
+
+
+MainApp.java
+```java
+...
+   public boolean showFormEditarAsegurado(Asegurado asegurado){
+        try {
+            
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("views/AseguradoFormOverview.fxml"));
+            AnchorPane aseguradoFormOverview = (AnchorPane) loader.load();
+            
+            // Create the dialog Stage.
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Asegurado");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(aseguradoFormOverview);
+            dialogStage.setScene(scene);
+
+            // Set the person into the controller.
+            
+            AseguradoFormOverviewController controller = loader.getController();
+            controller.setDialogStage(dialogStage);
+            controller.setMainApp(this);
+            controller.setAsegurado(asegurado);
+                
+            // Show the dialog and wait until the user closes it
+            dialogStage.showAndWait();
+
+            return controller.isOkClicked();
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+...
+```
+
+* En **AseguradoFormOverviewController** agregamos el metodo setAsegurado para inicializar nuestros campos
+
+AseguradoFormOverviewController.java
+```java
+...
+    public void setAsegurado(Asegurado asegurado){
+        this.asegurado = asegurado;
+        nombreField.setText(asegurado.getNombre());
+        apellidosField.setText(asegurado.getApellido());
+        edadField.setText(Integer.toString(asegurado.getEdad()));
+        sexoComboBox.getSelectionModel().select(asegurado.getSexo()=="M"?1:0);
+        numeroSeguroField.setText(asegurado.getNumeroSeguroSocial());
+    }
+...
+```
+
+* Modificamos el metodo **guardarAsegurado** para enviar el parametro de id al web service
+
+AseguradoWebService.java
+```java
+...
+    public boolean guardarAsegurado(Asegurado asegurado,ObservableList<Asegurado> aseguradoData){
+        try {
+            Client client = ClientBuilder.newBuilder().register(JsonProcessingFeature.class)
+                    .property(JsonGenerator.PRETTY_PRINTING, true).build();
+            Form form = new Form();
+            Integer id = asegurado.getId();
+            if(id !=0){
+                form.param("id",Integer.toString(asegurado.getId()));
+            }           
+            form.param("nombre",asegurado.getNombre());
+            form.param("apellido", asegurado.getApellido());
+            form.param("sexo", asegurado.getSexo());
+            form.param("edad", Integer.toString(asegurado.getEdad()));
+            form.param("numeroSeguroSocial", asegurado.getNumeroSeguroSocial());
+
+            JsonObject aseguradoResult = client
+                    .target(REST_SERVICE_URL).path("/asegurados/guardar")
+                    .request("application/json")
+                    .post(Entity.entity(form,MediaType.APPLICATION_FORM_URLENCODED_TYPE),JsonObject.class);
+            asegurado.setId(Integer.parseInt(aseguradoResult.get("id").toString()));
+            
+            if(id ==0){
+                aseguradoData.add(asegurado);
+            }           
+            return true;
+        } catch (Exception e) {
+            Dialogs.create()
+            .title("Error")
+            .masthead("No se pudo cargar los asegurados de forma remota")
+            .showException(e);
+            return false;
+        }   
+        
+    }
+...
+```
+
+* Para terminar agregamos el boton editar al **AseguradoOverview.fxml** y asignamos el evento en **on Action|handleEditar**
+
+![alt text][30]
+
+[30]: https://raw.githubusercontent.com/dramon-z/curso-java/master/Semana10/img/30.png
