@@ -46,11 +46,11 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label text="Label" wrapText="true" GridPane.columnIndex="1" />
-            <Label text="Label" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label text="Label" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Label text="Label" wrapText="true" GridPane.columnIndex="3" />
-            <Label text="Label" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Label fx:id="nombreLabel" wrapText="true" GridPane.columnIndex="1" />
+            <Label fx:id="edadLabel" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="numeroSeguroSocialLabel" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label fx:id="apellidosLabel" wrapText="true" GridPane.columnIndex="3" />
+            <Label fx:id="sexoLabel" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="1" />
          </children>
       </GridPane>
       <TableView fx:id="aseguradoTable" layoutX="14.0" layoutY="180.0" prefHeight="155.0" prefWidth="565.0">
@@ -64,5 +64,6 @@
       </TableView>
       <Button layoutX="33.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleEditar" prefHeight="25.0" prefWidth="59.0" text="Editar" />
       <Button layoutX="98.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleEliminar" text="Eliminar" />
+      <Button layoutX="167.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleAgregar" text="Agregar" />
    </children>
 </AnchorPane>

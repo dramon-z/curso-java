@@ -2,13 +2,16 @@ package mx.gob.tabasco.seguro;
 
 import java.io.IOException;
 
+import mx.gob.tabasco.seguro.model.Asegurado;
 import mx.gob.tabasco.seguro.view.AseguradoController;
+import mx.gob.tabasco.seguro.view.AseguradoFormController;
 import mx.gob.tabasco.seguro.view.RootLayoutController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class MainApp extends Application {
@@ -58,6 +61,35 @@ public class MainApp extends Application {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}	
+	}
+	
+	public boolean showAseguradoForm(Asegurado asegurado){		
+		try {
+			FXMLLoader loader = new  FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("view/AseguradoFormView.fxml"));
+			AnchorPane aseguradoFormFxml = (AnchorPane) loader.load();
+			
+			AseguradoFormController controller = loader.getController();
+			controller.setMainApp(this);
+			if(asegurado!=null){
+				controller.setAsegurado(asegurado);
+			}
+			
+			Stage dialogStage = new Stage();
+            dialogStage.setTitle("Asegurado");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(aseguradoFormFxml);
+            dialogStage.setScene(scene);
+			
+			dialogStage.showAndWait();
+			return controller.isClicked();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+		}
+		
 	}
 	
 	
