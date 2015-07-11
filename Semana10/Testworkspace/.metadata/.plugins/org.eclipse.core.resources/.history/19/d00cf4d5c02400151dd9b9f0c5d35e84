@@ -1,0 +1,21 @@
+package mx.gob.tabasco.seguro.view;
+
+public class Snippet {
+	public void showAsegurados(){        	
+			try {
+				FXMLLoader loader = new FXMLLoader();
+	            loader.setLocation(MainApp.class.getResource("view/AseguradoView.fxml"));
+				AnchorPane aseguradoFxml = (AnchorPane) loader.load();
+				
+				AseguradoController controller = loader.getController();
+				controller.setMainApp(this);
+				controller.cargarAsegurados();
+				
+				rootLayout.setCenter(aseguradoFxml);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}	
+	}
+}
+

@@ -1,0 +1,15 @@
+package mx.gob.tabasco.seguro.view;
+
+import mx.gob.tabasco.seguro.MainApp;
+
+public class RootLayoutController {
+	 	
+	private MainApp mainApp;
+
+    public void setMainApp(MainApp mainApp) {
+        this.mainApp = mainApp;
+    }
+
+  
+
+}

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+			<item value="com.neurotec.samples"/>
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+			<item value="samples"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+		</list>
+		<list key="version">
+			<item value="1.0"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+		<list key="ciManagementUrl">
+		</list>
+		<list key="ciManagementSystem">
+		</list>
+		<list key="issueManagementSystem">
+		</list>
+		<list key="issueManagementUrl">
+		</list>
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\Program Files (x86)\Neurotechnology\Neurotec Biometric 5.1 SDK Trial\Samples"/>
+			<item value="C:\Users\daniel\Desktop\Neurotec_Biometric_5_1_SDK_Trial_2015-06-09\Neurotec_Biometric_5_1_SDK_Trial\Samples"/>
+			<item value="C:\Users\daniel\Desktop\Neurotec_Biometric_5_1_SDK_Trial_2015-06-09\Neurotec_Biometric_5_1_SDK_Trial\Samples\Devices\Java"/>
+			<item value="C:\Users\daniel\Desktop\Neurotec_Biometric_5_1_SDK_Trial_2015-06-09\Neurotec_Biometric_5_1_SDK_Trial\Samples\BiometricStandards\Java"/>
+			<item value="C:\Users\daniel\Desktop\Neurotec_Biometric_5_1_SDK_Trial_2015-06-09\Neurotec_Biometric_5_1_SDK_Trial\Samples\Biometrics\Java"/>
+			<item value="C:\Users\daniel\Desktop\Neurotec_Biometric_5_1_SDK_Trial_2015-06-09\Neurotec_Biometric_5_1_SDK_Trial\Samples\Biometrics"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+		</list>
+	</section>
+	<section name="MavenModuleWizardParentPage">
+		<list key="moduleName">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+			<item value="com.neurotec.samples"/>
+		</list>
+		<list key="groupId">
+			<item value="com.neurotec.samples"/>
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+		</list>
+		<list key="version">
+			<item value="1.0"/>
+		</list>
+	</section>
+</section>

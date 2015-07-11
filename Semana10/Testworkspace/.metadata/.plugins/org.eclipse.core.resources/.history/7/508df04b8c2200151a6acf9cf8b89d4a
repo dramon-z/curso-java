@@ -1,0 +1,5 @@
+package mx.gob.tabasco.seguro.model;
+
+public class Asegurado {
+
+}

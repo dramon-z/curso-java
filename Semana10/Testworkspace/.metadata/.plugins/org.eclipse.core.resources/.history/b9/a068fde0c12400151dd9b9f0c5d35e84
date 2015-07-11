@@ -1,0 +1,23 @@
+package mx.gob.tabasco.seguro.view;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.scene.control.TableCell;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.text.Text;
+import javafx.util.Callback;
+import mx.gob.tabasco.seguro.MainApp;
+
+public class AseguradoController {
+	
+	
+	private MainApp mainApp;
+
+    public void setMainApp(MainApp mainApp) {
+        this.mainApp = mainApp;
+    }
+    
+
+}

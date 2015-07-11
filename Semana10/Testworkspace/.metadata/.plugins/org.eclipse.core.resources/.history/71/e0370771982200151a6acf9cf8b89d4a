@@ -1,0 +1,49 @@
+package mx.gob.tabasco.seguro.view;
+
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TableColumn;
+import mx.gob.tabasco.seguro.MainApp;
+import mx.gob.tabasco.seguro.model.Asegurado;
+import mx.gob.tabasco.seguro.util.AseguradoWebService;
+
+public class AseguradoController {
+	
+	@FXML
+    private TableView<Asegurado> aseguradoTable;
+	@FXML
+	private TableColumn<Asegurado,String> nombreColumn;
+	@FXML
+	private TableColumn<Asegurado,String> apellidosColumn;
+	@FXML
+	private TableColumn<Asegurado,Number> edadColumn;
+	@FXML
+	private TableColumn<Asegurado, String> sexoColumn;
+	@FXML
+	private TableColumn<Asegurado, String> numeroSeguroSocialColumn;
+	
+	private ObservableList<Asegurado> aseguradoData;
+	
+	
+	private MainApp mainApp;
+
+    public void setMainApp(MainApp mainApp) {
+        this.mainApp = mainApp;
+    }
+    
+    public void loadAsegurados(){
+    	AseguradoWebService ws = new AseguradoWebService();
+    	ws.loadAsegurados(aseguradoData);
+    }
+
+    @FXML
+    private void handleEliminar() {
+
+    }
+    
+    @FXML
+    private void handleEditar() {
+
+    }
+}

@@ -14,7 +14,7 @@ import mx.gob.tabasco.seguro.model.Asegurado;
 import mx.gob.tabasco.seguro.model.AseguradoMessageBodyReader;
 import javafx.collections.ObservableList;
 
-public class AseguradoWebService {
+public class AseguradoWebService{
 
 	private static final String REST_SERVICE_URL = "http://localhost:8080/MiProyecto/api";
 	
