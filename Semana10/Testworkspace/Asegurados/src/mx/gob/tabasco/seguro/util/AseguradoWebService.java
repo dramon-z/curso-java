@@ -65,7 +65,29 @@ public class AseguradoWebService{
                     .post(Entity.entity(form,MediaType.APPLICATION_FORM_URLENCODED_TYPE),JsonObject.class);
             asegurado.setId(Integer.parseInt(aseguradoResult.get("id").toString()));
             
-            return true;
+          return true;
+        } catch (Exception e) {
+            Dialogs.create()
+            .title("Error")
+            .masthead("No se pudo cargar los asegurados de forma remota")
+            .showException(e);
+            return false;
+        }   
+		
+	}
+    public boolean eliminarAsegurado(Asegurado asegurado) {
+    	try {
+            Client client = ClientBuilder.newBuilder().register(JsonProcessingFeature.class)
+                    .property(JsonGenerator.PRETTY_PRINTING, true).build();
+            client.register(AseguradoMessageBodyReader.class);
+            
+            JsonObject aseguradoResult = client
+                    .target(REST_SERVICE_URL).path("/asegurados/eliminar/{id}")
+                    .resolveTemplate("id", asegurado.getId())
+                    .request("application/json")
+                    .delete(JsonObject.class);
+          
+          return aseguradoResult.get("success").toString().equals("true")?true:false;
         } catch (Exception e) {
             Dialogs.create()
             .title("Error")

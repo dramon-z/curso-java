@@ -37,7 +37,7 @@ public class AseguradoFormController {
                 "Femenino",
                 "Masculino"
             ));
-        sexoComboBox.getSelectionModel().select(0); 
+        sexoComboBox.getSelectionModel().select(0);
         edadField.addEventFilter(KeyEvent.KEY_TYPED, new EventHandler<KeyEvent>() {
             public void handle( KeyEvent t ) {
                 char ar[] = t.getCharacter().toCharArray();
@@ -61,8 +61,8 @@ public class AseguradoFormController {
 			asegurado.setNumeroSeguroSocial(numeroSeguroSocial.getText());
 			asegurado.setSexo(sexoComboBox.getValue().equals("Masculino")?"M":"F");
 			AseguradoWebService ws = new AseguradoWebService();
-			ws.guardarAsegurado(asegurado);
-			this.clickOk=true;
+			
+			this.clickOk=ws.guardarAsegurado(asegurado);
 			this.dialoStage.close();
 		} catch (Exception e) {
 			Dialogs.create()
@@ -93,6 +93,12 @@ public class AseguradoFormController {
 	
 	public void setAsegurado(Asegurado asegurado){
 		this.asegurado = asegurado;
+		nombreField.setText(asegurado.getNombre());
+		apellidosField.setText(asegurado.getApellido());
+		edadField.setText(Integer.toString(asegurado.getEdad()));
+		numeroSeguroSocial.setText(asegurado.getNumeroSeguroSocial());		
+		sexoComboBox.getSelectionModel().select(asegurado.getSexo().equals("F")?0:1);
+
 	}
 
 }

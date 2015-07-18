@@ -82,6 +82,7 @@ public class MainApp extends Application {
             Scene scene = new Scene(aseguradoFormFxml);
             dialogStage.setScene(scene);
 			
+            controller.setDialoStage(dialogStage);
 			dialogStage.showAndWait();
 			return controller.isClicked();
 		} catch (IOException e) {

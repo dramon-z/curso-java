@@ -1,5 +1,9 @@
 package mx.gob.tabasco.seguro.view;
 
+import javax.crypto.AEADBadTagException;
+
+import org.controlsfx.control.action.Action;
+import org.controlsfx.dialog.Dialog;
 import org.controlsfx.dialog.Dialogs;
 
 import javafx.collections.FXCollections;
@@ -121,7 +125,31 @@ public class AseguradoController {
 
     @FXML
     private void handleEliminar() {
-
+    	Asegurado asegurado = aseguradoTable.getSelectionModel().getSelectedItem();
+    	if(asegurado!=null){
+    		Action response = Dialogs.create()
+    				.title("Eliminar Asegurado")
+    				.masthead("Se procedeta ha eliminar el asegurado "+asegurado.getNombre()+" "+asegurado.getApellido()+", ¿desea continuar?.")
+    				.showConfirm();
+    		if(response == Dialog.Actions.YES){
+    			AseguradoWebService ws = new AseguradoWebService();
+    			boolean clickOk = ws.eliminarAsegurado(asegurado);
+    			if(clickOk){
+    				aseguradoTable.getItems().remove(aseguradoTable.getSelectionModel().getSelectedIndex());
+    				aseguradoData.remove(asegurado);
+    				Dialogs.create()
+    	    		.title("Aviso")
+    	    		.masthead("Se elimino de forma correcta")
+    	    		.showInformation();
+    			}
+    			
+    		}
+    	}else{
+    		Dialogs.create()
+    		.title("Aviso")
+    		.masthead("Seleccione un Asegurado.")
+    		.showWarning();
+    	}
     }
     
     @FXML
@@ -134,7 +162,7 @@ public class AseguradoController {
         		.title("Aviso")
         		.masthead("Se guardo de forma exitosa")
         		.showInformation();
-        		this.cargarAsegurados();
+        		
         	}
     	}else{
     		Dialogs.create()
@@ -152,6 +180,7 @@ public class AseguradoController {
     		.title("Aviso")
     		.masthead("Se guardo de forma exitosa")
     		.showInformation();
+    		this.cargarAsegurados();
     	}
     }
     
